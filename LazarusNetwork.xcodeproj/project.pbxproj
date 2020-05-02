@@ -44,6 +44,19 @@
 		40835CD9245C97D9007B942D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40835CD4245C97D9007B942D /* Montserrat-SemiBold.ttf */; };
 		40835CDA245C97D9007B942D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40835CD5245C97D9007B942D /* Montserrat-Regular.ttf */; };
 		40835CDC245C9FDC007B942D /* UIViewController+KeyBoardDismissal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CDB245C9FDC007B942D /* UIViewController+KeyBoardDismissal.swift */; };
+		40835CDF245D7A21007B942D /* DomainsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CDE245D7A21007B942D /* DomainsListViewController.swift */; };
+		40835CE1245D7A32007B942D /* DomainsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CE0245D7A32007B942D /* DomainsListPresenter.swift */; };
+		40835CE3245D7A3F007B942D /* DomainsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CE2245D7A3F007B942D /* DomainsListModel.swift */; };
+		40835CE5245D7A4F007B942D /* DomainsListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CE4245D7A4F007B942D /* DomainsListConfigurator.swift */; };
+		40835CE8245D7D13007B942D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CE7245D7D13007B942D /* NetworkManager.swift */; };
+		40835CEA245D7E01007B942D /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CE9245D7E01007B942D /* Controllers.swift */; };
+		40835CEC245D83FC007B942D /* PlainModelFillable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CEB245D83FC007B942D /* PlainModelFillable.swift */; };
+		40835CF0245D84D7007B942D /* DomainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CEE245D84D7007B942D /* DomainTableViewCell.swift */; };
+		40835CF1245D84D7007B942D /* DomainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40835CEF245D84D7007B942D /* DomainTableViewCell.xib */; };
+		40835CF4245D86BF007B942D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40835CF3245D86BF007B942D /* Colors.xcassets */; };
+		40835CF6245D8D1A007B942D /* UITableViewCell+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CF5245D8D1A007B942D /* UITableViewCell+ReuseIdentifier.swift */; };
+		40835CF8245D91E3007B942D /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CF7245D91E3007B942D /* ReachabilityManager.swift */; };
+		40835CFB245D938A007B942D /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CFA245D938A007B942D /* Domain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +99,19 @@
 		40835CD4245C97D9007B942D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		40835CD5245C97D9007B942D /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		40835CDB245C9FDC007B942D /* UIViewController+KeyBoardDismissal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KeyBoardDismissal.swift"; sourceTree = "<group>"; };
+		40835CDE245D7A21007B942D /* DomainsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainsListViewController.swift; sourceTree = "<group>"; };
+		40835CE0245D7A32007B942D /* DomainsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainsListPresenter.swift; sourceTree = "<group>"; };
+		40835CE2245D7A3F007B942D /* DomainsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainsListModel.swift; sourceTree = "<group>"; };
+		40835CE4245D7A4F007B942D /* DomainsListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainsListConfigurator.swift; sourceTree = "<group>"; };
+		40835CE7245D7D13007B942D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		40835CE9245D7E01007B942D /* Controllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
+		40835CEB245D83FC007B942D /* PlainModelFillable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainModelFillable.swift; sourceTree = "<group>"; };
+		40835CEE245D84D7007B942D /* DomainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTableViewCell.swift; sourceTree = "<group>"; };
+		40835CEF245D84D7007B942D /* DomainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DomainTableViewCell.xib; sourceTree = "<group>"; };
+		40835CF3245D86BF007B942D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		40835CF5245D8D1A007B942D /* UITableViewCell+ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+ReuseIdentifier.swift"; sourceTree = "<group>"; };
+		40835CF7245D91E3007B942D /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		40835CFA245D938A007B942D /* Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +160,7 @@
 		40835C87245C7013007B942D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				40835CDD245D76A2007B942D /* Domains */,
 				40835C88245C7013007B942D /* Login */,
 			);
 			path = Modules;
@@ -155,6 +182,8 @@
 		40835C89245C7013007B942D /* Cores */ = {
 			isa = PBXGroup;
 			children = (
+				40835CF9245D9378007B942D /* Models */,
+				40835CE6245D7D04007B942D /* Managers */,
 				40835CC7245C8AD3007B942D /* Constants */,
 				40835CB8245C8222007B942D /* Custom Views */,
 				40835CB5245C819D007B942D /* Extensions */,
@@ -171,6 +200,7 @@
 			children = (
 				40835C99245C723F007B942D /* BaseConfigurator.swift */,
 				40835CA6245C7375007B942D /* BaseStartingConfigurator.swift */,
+				40835CE9245D7E01007B942D /* Controllers.swift */,
 			);
 			path = Configurators;
 			sourceTree = "<group>";
@@ -184,6 +214,7 @@
 				40835CAA245C75FD007B942D /* Protocol.swift */,
 				40835CAE245C7808007B942D /* ProgressContainig.swift */,
 				40835CBB245C8470007B942D /* UIViewLoading.swift */,
+				40835CEB245D83FC007B942D /* PlainModelFillable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -221,6 +252,7 @@
 				40835CC5245C8A72007B942D /* String + Constants.swift */,
 				40835CCA245C8B5A007B942D /* String+Localized.swift */,
 				40835CDB245C9FDC007B942D /* UIViewController+KeyBoardDismissal.swift */,
+				40835CF5245D8D1A007B942D /* UITableViewCell+ReuseIdentifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,6 +295,7 @@
 		40835CCE245C97D9007B942D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				40835CF2245D86A7007B942D /* Colors */,
 				40835CCF245C97D9007B942D /* Fonts */,
 			);
 			path = Resources;
@@ -286,6 +319,52 @@
 				40835CD5245C97D9007B942D /* Montserrat-Regular.ttf */,
 			);
 			path = Montserrat;
+			sourceTree = "<group>";
+		};
+		40835CDD245D76A2007B942D /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				40835CED245D84B5007B942D /* Views */,
+				40835CDE245D7A21007B942D /* DomainsListViewController.swift */,
+				40835CE0245D7A32007B942D /* DomainsListPresenter.swift */,
+				40835CE2245D7A3F007B942D /* DomainsListModel.swift */,
+				40835CE4245D7A4F007B942D /* DomainsListConfigurator.swift */,
+			);
+			path = Domains;
+			sourceTree = "<group>";
+		};
+		40835CE6245D7D04007B942D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				40835CE7245D7D13007B942D /* NetworkManager.swift */,
+				40835CF7245D91E3007B942D /* ReachabilityManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		40835CED245D84B5007B942D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40835CEE245D84D7007B942D /* DomainTableViewCell.swift */,
+				40835CEF245D84D7007B942D /* DomainTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		40835CF2245D86A7007B942D /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				40835CF3245D86BF007B942D /* Colors.xcassets */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		40835CF9245D9378007B942D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				40835CFA245D938A007B942D /* Domain.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,7 +428,9 @@
 				40835CDA245C97D9007B942D /* Montserrat-Regular.ttf in Resources */,
 				40835CD7245C97D9007B942D /* Montserrat-Light.ttf in Resources */,
 				40835C80245B603C007B942D /* LaunchScreen.storyboard in Resources */,
+				40835CF1245D84D7007B942D /* DomainTableViewCell.xib in Resources */,
 				40835CD6245C97D9007B942D /* Montserrat-Medium.ttf in Resources */,
+				40835CF4245D86BF007B942D /* Colors.xcassets in Resources */,
 				40835C7D245B603C007B942D /* Assets.xcassets in Resources */,
 				40835C7B245B603A007B942D /* Main.storyboard in Resources */,
 				40835CC1245C85E6007B942D /* NavigationBar.xib in Resources */,
@@ -365,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40835CE1245D7A32007B942D /* DomainsListPresenter.swift in Sources */,
 				40835CC9245C8AE5007B942D /* Constants.swift in Sources */,
 				40835CA2245C728C007B942D /* BaseNavigationViewController.swift in Sources */,
 				40835CB2245C7B42007B942D /* Credentionals.swift in Sources */,
@@ -375,24 +457,34 @@
 				40835CBF245C8562007B942D /* NavigationBarDelegate.swift in Sources */,
 				40835C91245C7072007B942D /* LoginViewConfigurator.swift in Sources */,
 				40835CAF245C7808007B942D /* ProgressContainig.swift in Sources */,
+				40835CFB245D938A007B942D /* Domain.swift in Sources */,
 				40835CB4245C809A007B942D /* BaseViewController.swift in Sources */,
 				40835C8B245C7037007B942D /* LoginViewController.swift in Sources */,
 				40835C8F245C7062007B942D /* LoginViewModel.swift in Sources */,
 				40835CA5245C731A007B942D /* ControllerCreationFabric.swift in Sources */,
+				40835CE8245D7D13007B942D /* NetworkManager.swift in Sources */,
 				40835CA9245C7565007B942D /* Model.swift in Sources */,
 				40835C74245B603A007B942D /* AppDelegate.swift in Sources */,
 				40835C9E245C723F007B942D /* Configurable.swift in Sources */,
+				40835CE5245D7A4F007B942D /* DomainsListConfigurator.swift in Sources */,
+				40835CF8245D91E3007B942D /* ReachabilityManager.swift in Sources */,
 				40835C9F245C723F007B942D /* NavigationControllerEmbedding.swift in Sources */,
 				40835CBC245C8470007B942D /* UIViewLoading.swift in Sources */,
 				40835CA7245C7375007B942D /* BaseStartingConfigurator.swift in Sources */,
+				40835CEA245D7E01007B942D /* Controllers.swift in Sources */,
 				40835CCD245C8C0E007B942D /* StartUpFlowType.swift in Sources */,
+				40835CF6245D8D1A007B942D /* UITableViewCell+ReuseIdentifier.swift in Sources */,
+				40835CDF245D7A21007B942D /* DomainsListViewController.swift in Sources */,
 				40835CBA245C823F007B942D /* NavigationBar.swift in Sources */,
 				40835CC6245C8A72007B942D /* String + Constants.swift in Sources */,
 				40835C76245B603A007B942D /* SceneDelegate.swift in Sources */,
 				40835C9D245C723F007B942D /* BaseConfigurator.swift in Sources */,
 				40835CAD245C7772007B942D /* ViewController.swift in Sources */,
+				40835CE3245D7A3F007B942D /* DomainsListModel.swift in Sources */,
 				40835CC4245C8897007B942D /* NavigationBarBackState.swift in Sources */,
+				40835CEC245D83FC007B942D /* PlainModelFillable.swift in Sources */,
 				40835CAB245C75FD007B942D /* Protocol.swift in Sources */,
+				40835CF0245D84D7007B942D /* DomainTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -9,6 +9,9 @@
     <customFonts key="customFonts">
         <array key="Montserrat-Bold.ttf">
             <string>Montserrat-Bold</string>
+        </array>
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
         </array>
         <array key="Montserrat-SemiBold.ttf">
             <string>Montserrat-SemiBold</string>
@@ -20,17 +23,17 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="LazarusNetwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xb6-kR-2cv">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6x-8S-IS0">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="692"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqc-MX-kAa" userLabel="LoginContainer">
-                                                <rect key="frame" x="42" y="272" width="330" height="292"/>
+                                                <rect key="frame" x="22.5" y="170" width="330" height="292"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dFB-HP-EAL">
                                                         <rect key="frame" x="0.0" y="0.0" width="330" height="186"/>
@@ -49,7 +52,7 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="44" id="R7g-xP-PxX"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                     </textField>
                                                                 </subviews>
@@ -65,7 +68,7 @@
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gnv-cy-nJa">
                                                                         <rect key="frame" x="0.0" y="44" width="330" height="44"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                     </textField>
                                                                 </subviews>
@@ -75,7 +78,7 @@
                                                     </stackView>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vY-OL-DkR">
                                                         <rect key="frame" x="0.0" y="246" width="330" height="46"/>
-                                                        <color key="backgroundColor" red="0.21173727510000001" green="0.21178042890000001" blue="0.21173459289999999" alpha="0.90029105392156861" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="0.90029105392156861" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="46" id="7R8-W3-sLe"/>
                                                         </constraints>
@@ -106,7 +109,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72O-SI-EAx">
-                                                <rect key="frame" x="42" y="806" width="153" height="30"/>
+                                                <rect key="frame" x="22.5" y="602" width="153" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login as new user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddz-IL-i5d">
                                                         <rect key="frame" x="0.0" y="0.0" width="127" height="30"/>
@@ -144,13 +147,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lazarus Network" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSe-eF-Ri3">
-                                                <rect key="frame" x="113" y="204" width="188.5" height="27"/>
+                                                <rect key="frame" x="93.5" y="160" width="188.5" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
                                                 <color key="textColor" red="0.2391854823" green="0.23923307660000001" blue="0.2391824722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LazarusDark" translatesAutoresizingMaskIntoConstraints="NO" id="3Ef-ZH-rMj">
-                                                <rect key="frame" x="0.0" y="54" width="414" height="140"/>
+                                                <rect key="frame" x="0.0" y="10" width="375" height="140"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="140" id="Xol-Vb-fnC"/>
                                                 </constraints>
@@ -205,6 +208,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </scene>
+        <!--Domains List View Controller-->
+        <scene sceneID="jLb-Xo-DhR">
+            <objects>
+                <viewController storyboardIdentifier="DomainsListViewController" id="PUB-Ry-0WX" customClass="DomainsListViewController" customModule="LazarusNetwork" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dVo-Pz-A0H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UMK-ia-j7r" customClass="NavigationBar" customModule="LazarusNetwork" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="1ab-wo-2vc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isLeftButtonDisabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBackModeEnabled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="PUB-Ry-0WX" id="9iO-XD-1nS"/>
+                                </connections>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rsr-O7-Dv1">
+                                <rect key="frame" x="0.0" y="54" width="375" height="613"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rsr-O7-Dv1" firstAttribute="top" secondItem="UMK-ia-j7r" secondAttribute="bottom" id="9n2-hE-xR8"/>
+                            <constraint firstItem="rsr-O7-Dv1" firstAttribute="trailing" secondItem="YwZ-Fv-PpQ" secondAttribute="trailing" id="Qqx-IY-tbt"/>
+                            <constraint firstItem="rsr-O7-Dv1" firstAttribute="leading" secondItem="YwZ-Fv-PpQ" secondAttribute="leading" id="R9r-Ft-N7I"/>
+                            <constraint firstAttribute="bottom" secondItem="rsr-O7-Dv1" secondAttribute="bottom" id="Ud3-ol-YpX"/>
+                            <constraint firstItem="UMK-ia-j7r" firstAttribute="leading" secondItem="YwZ-Fv-PpQ" secondAttribute="leading" id="d6z-ah-9Sn"/>
+                            <constraint firstItem="UMK-ia-j7r" firstAttribute="top" secondItem="YwZ-Fv-PpQ" secondAttribute="top" id="d9c-Cf-BQZ"/>
+                            <constraint firstItem="YwZ-Fv-PpQ" firstAttribute="trailing" secondItem="UMK-ia-j7r" secondAttribute="trailing" id="lZO-Cw-pJg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YwZ-Fv-PpQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="UMK-ia-j7r" id="2zv-a0-f8L"/>
+                        <outlet property="tableView" destination="rsr-O7-Dv1" id="mDE-kG-scE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Fd-h4-bxK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="902.89855072463774" y="120.53571428571428"/>
         </scene>
     </scenes>
     <resources>

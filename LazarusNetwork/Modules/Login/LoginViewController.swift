@@ -29,22 +29,13 @@ class LoginViewController: BaseViewController {
     
     @IBAction func logInButtonSelected(_ sender: Any) {
         let credentionals = Credentionals(login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
-
-//        currentPresenter.logInSelected(inWith: .default, and: credentionals)
+        currentPresenter.loginSelected(type: .existedUser, credentials: credentionals)
     }
     
     @IBAction func loginAsNewUserSelected(_ sender: UIButton) {
         let credentionals = Credentionals(login: loginTextField.text ?? "",
                                           password: passwordTextField.text ?? "")
-        
-//        currentPresenter.logInSelected(inWith: .asNewOnPhone, and: credentionals)
-    }
-    
-    @IBAction func biometricalLoginSelected(_ sender: UIButton) {
-        let credentionals = Credentionals(login: loginTextField.text ?? "",
-                                          password: passwordTextField.text ?? "")
-        
-//        currentPresenter.logInSelected(inWith: .biometric, and: credentionals)
+        currentPresenter.loginSelected(type: .newUser, credentials: credentionals)
     }
     
     override func viewWillAppear(_ animated: Bool) {

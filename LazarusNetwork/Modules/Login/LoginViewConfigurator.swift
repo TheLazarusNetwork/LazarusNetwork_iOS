@@ -27,7 +27,7 @@ class LogInConfigurator: BaseConfiguratorContainingControllerType {
         guard let createdController = ControllerCreationFabric.default.controller(for: controllerType) as? LoginViewController else {
             return UIViewController()
         }
-
+        
         let model = LoginModel()
         let presenter = LogInPresenter(with: model)
         
@@ -35,24 +35,16 @@ class LogInConfigurator: BaseConfiguratorContainingControllerType {
         createdController.presenter = presenter
         
         presenter.onLoggedIn = { [weak createdController] in
-//            UserSettingsManager.shared.currentUserSettings.isLoggedIn = true
-//            UserSettingsManager.shared.currentUserWasLoggedIn()
-//
-//            let tabBarConfigurator = TabBarConfigurator()
-//            tabBarConfigurator.isFirstInFlow = false
-//
-//            guard let navigationController = createdController?.navigationController else {
-//                Log.assertionFailure("Corrupted logic")
-//                return
-//            }
-//
-//            navigationController.setViewControllers([tabBarConfigurator.controller], animated: true)
+            let configurator = DomainsListConfigurator()
+            
+            guard let navigationController = createdController?.navigationController else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                navigationController.pushViewController(configurator.controller, animated: true)
+            }
         }
-//        presenter.onFaqSelected = { [weak createdController] in
-//            let configurator = ContactSupportConfigurator()
-//
-//            createdController?.navigationController?.pushViewController(configurator.controller, animated: true)
-//        }
         
         return createdController
     }
