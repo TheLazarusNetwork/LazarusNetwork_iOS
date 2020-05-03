@@ -13,10 +13,13 @@ protocol DomainsListViewControllable: ViewController {
     
     func setTitle(title: String)
     func closeScreen()
+    func updateMainInfo(message: String)
 }
 
 class DomainsListViewController: BaseViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var messageView: UIView!
     
     private let cellIdentifier = DomainTableViewCell.reuseIdentifier
     
@@ -57,7 +60,9 @@ extension DomainsListViewController: UITableViewDelegate {
 
 extension DomainsListViewController: DomainsListViewControllable {
     func reloadTable() {
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func setTitle(title: String) {
@@ -66,6 +71,13 @@ extension DomainsListViewController: DomainsListViewControllable {
     
     func closeScreen() {
         leftActionSelected(with: self)
+    }
+    
+    func updateMainInfo(message: String) {
+        DispatchQueue.main.async {
+            self.messageLabel.text = message
+            self.messageView.isHidden = false
+        }
     }
 }
 

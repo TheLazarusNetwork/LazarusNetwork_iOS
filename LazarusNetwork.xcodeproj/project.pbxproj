@@ -57,6 +57,7 @@
 		40835CF6245D8D1A007B942D /* UITableViewCell+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CF5245D8D1A007B942D /* UITableViewCell+ReuseIdentifier.swift */; };
 		40835CF8245D91E3007B942D /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CF7245D91E3007B942D /* ReachabilityManager.swift */; };
 		40835CFB245D938A007B942D /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CFA245D938A007B942D /* Domain.swift */; };
+		40835CFD245F0D41007B942D /* DomainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CFC245F0D41007B942D /* DomainResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,7 @@
 		40835CF5245D8D1A007B942D /* UITableViewCell+ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+ReuseIdentifier.swift"; sourceTree = "<group>"; };
 		40835CF7245D91E3007B942D /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		40835CFA245D938A007B942D /* Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
+		40835CFC245F0D41007B942D /* DomainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				40835CFA245D938A007B942D /* Domain.swift */,
+				40835CFC245F0D41007B942D /* DomainResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				40835CFB245D938A007B942D /* Domain.swift in Sources */,
 				40835CB4245C809A007B942D /* BaseViewController.swift in Sources */,
 				40835C8B245C7037007B942D /* LoginViewController.swift in Sources */,
+				40835CFD245F0D41007B942D /* DomainResponse.swift in Sources */,
 				40835C8F245C7062007B942D /* LoginViewModel.swift in Sources */,
 				40835CA5245C731A007B942D /* ControllerCreationFabric.swift in Sources */,
 				40835CE8245D7D13007B942D /* NetworkManager.swift in Sources */,

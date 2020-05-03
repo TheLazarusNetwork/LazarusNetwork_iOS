@@ -23,7 +23,7 @@ enum LoginType {
 protocol LoginPresentable: Presenter {
     var controller: LoginViewControllable? { get set }
     
-    var onLoggedIn: Model.EmptyOptionalHandler { get set }
+    var onLoggedIn: Model.StringOptionalHandler { get set }
     
     func loginSelected(type: LoginType, credentials: Credentionals)
 }
@@ -31,7 +31,7 @@ protocol LoginPresentable: Presenter {
 class LogInPresenter: LoginPresentable {
     weak var controller: LoginViewControllable?
     
-    var onLoggedIn: Model.EmptyOptionalHandler = nil
+    var onLoggedIn: Model.StringOptionalHandler = nil
     
     private let model: LoginModellable
     
@@ -61,7 +61,7 @@ class LogInPresenter: LoginPresentable {
             return
         }
         
-        onLoggedIn?()
+        onLoggedIn?(credentials.login)
     }
     
     func validate(credentials: Credentionals) -> Bool {

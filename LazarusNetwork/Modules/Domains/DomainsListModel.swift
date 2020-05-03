@@ -16,18 +16,36 @@ protocol DomainsListModellable: Model {
 
 class DomainsListModel: DomainsListModellable {
     var domainsList: [DomainCellPlainModel] = .init()
+    let email: String
+    
+    init(with email: String) {
+        self.email = email
+    }
     
     func loadDomains(completion: @escaping ((ResultType) -> Void)) {
-        NetworkManager.shared.loadAllDomains() { [weak self] result, domains in
+        NetworkManager.shared.loadAllDomains(email: email) { [weak self] result, domainsResult in
             switch result {
             case .error(_):
                 completion(result)
             case .success:
-                guard let domains = domains else {
+                guard let domainsResult = domainsResult else {
                     completion(result)
                     return
                 }
+                guard let _ = domainsResult.total else {
+                    completion(.emptySuccess(domainsResult.message))
+                    return
+                }
+                
+                guard let domains = domainsResult.domain else {
+                    completion(.emptySuccess(domainsResult.message))
+                    return
+                }
+                
                 self?.prepareModels(domains:domains)
+                completion(result)
+                
+            default:
                 completion(result)
             }
             

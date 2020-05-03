@@ -34,9 +34,9 @@ class LogInConfigurator: BaseConfiguratorContainingControllerType {
         presenter.controller = createdController
         createdController.presenter = presenter
         
-        presenter.onLoggedIn = { [weak createdController] in
+        presenter.onLoggedIn = { [weak createdController] email in
             let configurator = DomainsListConfigurator()
-            
+            configurator.email = email
             guard let navigationController = createdController?.navigationController else {
                 return
             }

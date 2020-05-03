@@ -9,7 +9,7 @@
 import Foundation
 
 extension Constants.Strings {
-    static let endPointURL = "http://passport.degries.com/"
+    static let endPointURL = "https://api.lznet.co/api/v1/"
     static let errorFetching = "Error fetching".localized
     static let serverError = "Server side error".localized
     static let endPointError = "Url parsing error".localized
@@ -18,7 +18,7 @@ extension Constants.Strings {
 
 extension Constants.Strings {
     struct DateFormat {
-        static let dateFormat = "E, dd MMM yyyy HH:mm:ss z"
+        static let dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     }
 }
 
@@ -30,6 +30,7 @@ enum HTTPMethod:String {
 
 enum ResultType {
     case success
+    case emptySuccess(String)
     case error(String)
 }
 
@@ -44,12 +45,12 @@ class NetworkManager {
         return dateFormatter
     }
     
-    func loadAllDomains(completion: @escaping (ResultType, [Domain]?) -> Void) {
+    func loadAllDomains(email: String, completion: @escaping (ResultType, DomainResponse?) -> Void) {
         guard ReachabilityManager.isConnectedToNetwork() else {
             completion(.error(Constants.Strings.noConnection), nil)
             return
         }
-        let resultPart = Constants.Strings.endPointURL
+        let resultPart = Constants.Strings.endPointURL + "domain/admin/\(email)"
         guard let url = URL(string: resultPart) else {
             completion(.error(Constants.Strings.endPointError), nil)
             return
@@ -77,10 +78,10 @@ class NetworkManager {
                 }
                 
                 decoder.dateDecodingStrategy = .formatted(dateFormatter)
-                let domains: [Domain] = try decoder.decode([Domain].self, from: data)
+                let domains: DomainResponse = try decoder.decode(DomainResponse.self, from: data)
                 completion(.success, domains)
             } catch {
-                completion(.error(Constants.Strings.parsingError), nil)
+                completion(.error(error.localizedDescription), nil)
                 fatalError("Error during Parsing ResponseStruct - \(error)")
             }
         }

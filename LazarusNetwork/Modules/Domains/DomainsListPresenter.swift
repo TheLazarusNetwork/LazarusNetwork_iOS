@@ -43,6 +43,10 @@ class DomainsListPresenter: DomainsListPresentable {
             case .error(let error):
                 self?.controller?.show(alertWithMessage: error,
                                        andTitle: Constants.Strings.errorTitle)
+                
+            case .emptySuccess(let message):
+                self?.controller?.updateMainInfo(message: message)
+                
             case .success:
                 self?.controller?.reloadTable()
             }

@@ -9,6 +9,7 @@
 import UIKit
 
 class DomainsListConfigurator: BaseConfigurator {
+    var email: String = ""
     
     override func generateController() -> UIViewController {
         let controllerType: Controllers = .domains
@@ -17,7 +18,7 @@ class DomainsListConfigurator: BaseConfigurator {
             return UIViewController()
         }
         
-        let presenter = DomainsListPresenter(with: DomainsListModel())
+        let presenter = DomainsListPresenter(with: DomainsListModel(with: email))
         viewController.presenter = presenter
         presenter.controller = viewController
         
