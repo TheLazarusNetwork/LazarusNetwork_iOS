@@ -50,7 +50,7 @@
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lgY-l0-l3p">
                                                                         <rect key="frame" x="0.0" y="44" width="330" height="44"/>
-                                                                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="GreyColor"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="44" id="R7g-xP-PxX"/>
                                                                         </constraints>
@@ -71,7 +71,7 @@
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gnv-cy-nJa">
                                                                         <rect key="frame" x="0.0" y="44" width="330" height="44"/>
-                                                                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="GreyColor"/>
                                                                         <color key="textColor" name="DarkGreyColor"/>
                                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -114,23 +114,23 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72O-SI-EAx">
-                                                <rect key="frame" x="22.5" y="537" width="140" height="30"/>
+                                                <rect key="frame" x="22.5" y="537" width="153" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login as new user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddz-IL-i5d">
-                                                        <rect key="frame" x="0.0" y="0.0" width="114" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="127" height="30"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                                         <color key="textColor" name="DarkGreyColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="Ys5-Nk-GEm">
-                                                        <rect key="frame" x="114" y="8.5" width="26" height="13"/>
+                                                        <rect key="frame" x="127" y="8.5" width="26" height="13"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="13" id="fuY-Wb-TCY"/>
                                                             <constraint firstAttribute="width" secondItem="Ys5-Nk-GEm" secondAttribute="height" multiplier="2:1" id="ifi-1E-gAh"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kty-h1-f8q">
-                                                        <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="153" height="30"/>
                                                         <connections>
                                                             <action selector="loginAsNewUserSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qF5-WC-Scw"/>
                                                         </connections>
@@ -152,7 +152,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lazarus Network" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSe-eF-Ri3">
-                                                <rect key="frame" x="104.5" y="160" width="166" height="30"/>
+                                                <rect key="frame" x="93.5" y="160" width="188.5" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="gjj-T5-3Kh"/>
                                                 </constraints>
@@ -250,7 +250,7 @@
                                 <rect key="frame" x="0.0" y="54" width="375" height="613"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWf-fz-7NW">
-                                        <rect key="frame" x="165.5" y="236" width="44.5" height="21"/>
+                                        <rect key="frame" x="162" y="235.5" width="51" height="22"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
                                         <color key="textColor" name="DarkGreyColor"/>
                                         <nil key="highlightedColor"/>
@@ -310,7 +310,7 @@
     </scenes>
     <resources>
         <image name="LazarusDark" width="480" height="388"/>
-        <image name="plus" width="96" height="96"/>
+        <image name="plus" width="100" height="100"/>
         <image name="rightArrow" width="324" height="155"/>
         <namedColor name="DarkGreyColor">
             <color red="0.21199999749660492" green="0.21199999749660492" blue="0.21199999749660492" alpha="0.8970000147819519" colorSpace="custom" customColorSpace="sRGB"/>

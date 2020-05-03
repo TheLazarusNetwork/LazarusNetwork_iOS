@@ -10,7 +10,6 @@
 		40835C74245B603A007B942D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835C73245B603A007B942D /* AppDelegate.swift */; };
 		40835C76245B603A007B942D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835C75245B603A007B942D /* SceneDelegate.swift */; };
 		40835C7B245B603A007B942D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40835C79245B603A007B942D /* Main.storyboard */; };
-		40835C7D245B603C007B942D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40835C7C245B603C007B942D /* Assets.xcassets */; };
 		40835C80245B603C007B942D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40835C7E245B603C007B942D /* LaunchScreen.storyboard */; };
 		40835C8B245C7037007B942D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835C8A245C7037007B942D /* LoginViewController.swift */; };
 		40835C8D245C7051007B942D /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835C8C245C7051007B942D /* LoginViewPresenter.swift */; };
@@ -58,6 +57,7 @@
 		40835CF8245D91E3007B942D /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CF7245D91E3007B942D /* ReachabilityManager.swift */; };
 		40835CFB245D938A007B942D /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CFA245D938A007B942D /* Domain.swift */; };
 		40835CFD245F0D41007B942D /* DomainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CFC245F0D41007B942D /* DomainResponse.swift */; };
+		40F35E17245F6326002634C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40F35E16245F6326002634C7 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +65,6 @@
 		40835C73245B603A007B942D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40835C75245B603A007B942D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		40835C7A245B603A007B942D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		40835C7C245B603C007B942D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40835C7F245B603C007B942D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40835C81245B603C007B942D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40835C8A245C7037007B942D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +113,7 @@
 		40835CF7245D91E3007B942D /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		40835CFA245D938A007B942D /* Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
 		40835CFC245F0D41007B942D /* DomainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainResponse.swift; sourceTree = "<group>"; };
+		40F35E16245F6326002634C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +152,6 @@
 				40835C73245B603A007B942D /* AppDelegate.swift */,
 				40835C75245B603A007B942D /* SceneDelegate.swift */,
 				40835C79245B603A007B942D /* Main.storyboard */,
-				40835C7C245B603C007B942D /* Assets.xcassets */,
 				40835C7E245B603C007B942D /* LaunchScreen.storyboard */,
 				40835C81245B603C007B942D /* Info.plist */,
 			);
@@ -297,6 +296,7 @@
 		40835CCE245C97D9007B942D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				40F35E15245F6326002634C7 /* Images */,
 				40835CF2245D86A7007B942D /* Colors */,
 				40835CCF245C97D9007B942D /* Fonts */,
 			);
@@ -370,6 +370,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		40F35E15245F6326002634C7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E16245F6326002634C7 /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -430,11 +438,11 @@
 			files = (
 				40835CDA245C97D9007B942D /* Montserrat-Regular.ttf in Resources */,
 				40835CD7245C97D9007B942D /* Montserrat-Light.ttf in Resources */,
+				40F35E17245F6326002634C7 /* Assets.xcassets in Resources */,
 				40835C80245B603C007B942D /* LaunchScreen.storyboard in Resources */,
 				40835CF1245D84D7007B942D /* DomainTableViewCell.xib in Resources */,
 				40835CD6245C97D9007B942D /* Montserrat-Medium.ttf in Resources */,
 				40835CF4245D86BF007B942D /* Colors.xcassets in Resources */,
-				40835C7D245B603C007B942D /* Assets.xcassets in Resources */,
 				40835C7B245B603A007B942D /* Main.storyboard in Resources */,
 				40835CC1245C85E6007B942D /* NavigationBar.xib in Resources */,
 				40835CD9245C97D9007B942D /* Montserrat-SemiBold.ttf in Resources */,
