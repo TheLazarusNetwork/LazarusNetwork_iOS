@@ -28,11 +28,7 @@
 		40835CB2245C7B42007B942D /* Credentionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CB1245C7B42007B942D /* Credentionals.swift */; };
 		40835CB4245C809A007B942D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CB3245C809A007B942D /* BaseViewController.swift */; };
 		40835CB7245C81B5007B942D /* Int + Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CB6245C81B5007B942D /* Int + Constants.swift */; };
-		40835CBA245C823F007B942D /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CB9245C823F007B942D /* NavigationBar.swift */; };
 		40835CBC245C8470007B942D /* UIViewLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CBB245C8470007B942D /* UIViewLoading.swift */; };
-		40835CBF245C8562007B942D /* NavigationBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CBE245C8562007B942D /* NavigationBarDelegate.swift */; };
-		40835CC1245C85E6007B942D /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40835CC0245C85E6007B942D /* NavigationBar.xib */; };
-		40835CC4245C8897007B942D /* NavigationBarBackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CC3245C8897007B942D /* NavigationBarBackState.swift */; };
 		40835CC6245C8A72007B942D /* String + Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CC5245C8A72007B942D /* String + Constants.swift */; };
 		40835CC9245C8AE5007B942D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CC8245C8AE5007B942D /* Constants.swift */; };
 		40835CCB245C8B5A007B942D /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CCA245C8B5A007B942D /* String+Localized.swift */; };
@@ -58,6 +54,17 @@
 		40835CFB245D938A007B942D /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CFA245D938A007B942D /* Domain.swift */; };
 		40835CFD245F0D41007B942D /* DomainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CFC245F0D41007B942D /* DomainResponse.swift */; };
 		40F35E17245F6326002634C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40F35E16245F6326002634C7 /* Assets.xcassets */; };
+		40F35E2B2460C8A3002634C7 /* AlertViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E262460C8A3002634C7 /* AlertViewState.swift */; };
+		40F35E2C2460C8A3002634C7 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40F35E272460C8A3002634C7 /* AlertView.xib */; };
+		40F35E2D2460C8A3002634C7 /* AlertViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E292460C8A3002634C7 /* AlertViewAction.swift */; };
+		40F35E2E2460C8A3002634C7 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E2A2460C8A3002634C7 /* AlertView.swift */; };
+		40F35E362460C8AF002634C7 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E302460C8AF002634C7 /* NavigationBar.swift */; };
+		40F35E372460C8AF002634C7 /* NavigationBarBackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E322460C8AF002634C7 /* NavigationBarBackState.swift */; };
+		40F35E382460C8AF002634C7 /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40F35E332460C8AF002634C7 /* NavigationBar.xib */; };
+		40F35E392460C8AF002634C7 /* NavigationBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E352460C8AF002634C7 /* NavigationBarDelegate.swift */; };
+		40F35E3B2460CA36002634C7 /* OnControllerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E3A2460CA36002634C7 /* OnControllerPresentable.swift */; };
+		40F35E3D2460CAD4002634C7 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E3C2460CAD4002634C7 /* UIView+Constraints.swift */; };
+		40F35E3F2460CC07002634C7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E3E2460CC07002634C7 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,11 +91,7 @@
 		40835CB1245C7B42007B942D /* Credentionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentionals.swift; sourceTree = "<group>"; };
 		40835CB3245C809A007B942D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		40835CB6245C81B5007B942D /* Int + Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Constants.swift"; sourceTree = "<group>"; };
-		40835CB9245C823F007B942D /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		40835CBB245C8470007B942D /* UIViewLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewLoading.swift; sourceTree = "<group>"; };
-		40835CBE245C8562007B942D /* NavigationBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarDelegate.swift; sourceTree = "<group>"; };
-		40835CC0245C85E6007B942D /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
-		40835CC3245C8897007B942D /* NavigationBarBackState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBackState.swift; sourceTree = "<group>"; };
 		40835CC5245C8A72007B942D /* String + Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Constants.swift"; sourceTree = "<group>"; };
 		40835CC8245C8AE5007B942D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		40835CCA245C8B5A007B942D /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
@@ -114,6 +117,17 @@
 		40835CFA245D938A007B942D /* Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
 		40835CFC245F0D41007B942D /* DomainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainResponse.swift; sourceTree = "<group>"; };
 		40F35E16245F6326002634C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		40F35E262460C8A3002634C7 /* AlertViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewState.swift; sourceTree = "<group>"; };
+		40F35E272460C8A3002634C7 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		40F35E292460C8A3002634C7 /* AlertViewAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewAction.swift; sourceTree = "<group>"; };
+		40F35E2A2460C8A3002634C7 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		40F35E302460C8AF002634C7 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		40F35E322460C8AF002634C7 /* NavigationBarBackState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarBackState.swift; sourceTree = "<group>"; };
+		40F35E332460C8AF002634C7 /* NavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
+		40F35E352460C8AF002634C7 /* NavigationBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarDelegate.swift; sourceTree = "<group>"; };
+		40F35E3A2460CA36002634C7 /* OnControllerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnControllerPresentable.swift; sourceTree = "<group>"; };
+		40F35E3C2460CAD4002634C7 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		40F35E3E2460CC07002634C7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +230,7 @@
 				40835CAE245C7808007B942D /* ProgressContainig.swift */,
 				40835CBB245C8470007B942D /* UIViewLoading.swift */,
 				40835CEB245D83FC007B942D /* PlainModelFillable.swift */,
+				40F35E3A2460CA36002634C7 /* OnControllerPresentable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -254,6 +269,7 @@
 				40835CCA245C8B5A007B942D /* String+Localized.swift */,
 				40835CDB245C9FDC007B942D /* UIViewController+KeyBoardDismissal.swift */,
 				40835CF5245D8D1A007B942D /* UITableViewCell+ReuseIdentifier.swift */,
+				40F35E3C2460CAD4002634C7 /* UIView+Constraints.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -261,28 +277,11 @@
 		40835CB8245C8222007B942D /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				40835CC2245C8878007B942D /* Enums */,
-				40835CBD245C8555007B942D /* Protocols */,
-				40835CB9245C823F007B942D /* NavigationBar.swift */,
-				40835CC0245C85E6007B942D /* NavigationBar.xib */,
+				40F35E2F2460C8AF002634C7 /* NavigationBar */,
+				40F35E232460C8A3002634C7 /* Dialogs */,
+				40F35E3E2460CC07002634C7 /* GradientView.swift */,
 			);
 			path = "Custom Views";
-			sourceTree = "<group>";
-		};
-		40835CBD245C8555007B942D /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				40835CBE245C8562007B942D /* NavigationBarDelegate.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		40835CC2245C8878007B942D /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-				40835CC3245C8897007B942D /* NavigationBarBackState.swift */,
-			);
-			path = Enums;
 			sourceTree = "<group>";
 		};
 		40835CC7245C8AD3007B942D /* Constants */ = {
@@ -378,6 +377,68 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		40F35E232460C8A3002634C7 /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E242460C8A3002634C7 /* AlertView */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
+		40F35E242460C8A3002634C7 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E252460C8A3002634C7 /* Enums */,
+				40F35E272460C8A3002634C7 /* AlertView.xib */,
+				40F35E282460C8A3002634C7 /* Support */,
+				40F35E2A2460C8A3002634C7 /* AlertView.swift */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
+		40F35E252460C8A3002634C7 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E262460C8A3002634C7 /* AlertViewState.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		40F35E282460C8A3002634C7 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E292460C8A3002634C7 /* AlertViewAction.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		40F35E2F2460C8AF002634C7 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E302460C8AF002634C7 /* NavigationBar.swift */,
+				40F35E312460C8AF002634C7 /* Enums */,
+				40F35E332460C8AF002634C7 /* NavigationBar.xib */,
+				40F35E342460C8AF002634C7 /* Protocols */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		40F35E312460C8AF002634C7 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E322460C8AF002634C7 /* NavigationBarBackState.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		40F35E342460C8AF002634C7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E352460C8AF002634C7 /* NavigationBarDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -439,14 +500,15 @@
 				40835CDA245C97D9007B942D /* Montserrat-Regular.ttf in Resources */,
 				40835CD7245C97D9007B942D /* Montserrat-Light.ttf in Resources */,
 				40F35E17245F6326002634C7 /* Assets.xcassets in Resources */,
+				40F35E382460C8AF002634C7 /* NavigationBar.xib in Resources */,
 				40835C80245B603C007B942D /* LaunchScreen.storyboard in Resources */,
 				40835CF1245D84D7007B942D /* DomainTableViewCell.xib in Resources */,
 				40835CD6245C97D9007B942D /* Montserrat-Medium.ttf in Resources */,
 				40835CF4245D86BF007B942D /* Colors.xcassets in Resources */,
 				40835C7B245B603A007B942D /* Main.storyboard in Resources */,
-				40835CC1245C85E6007B942D /* NavigationBar.xib in Resources */,
 				40835CD9245C97D9007B942D /* Montserrat-SemiBold.ttf in Resources */,
 				40835CD8245C97D9007B942D /* Montserrat-Bold.ttf in Resources */,
+				40F35E2C2460C8A3002634C7 /* AlertView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,13 +521,17 @@
 			files = (
 				40835CE1245D7A32007B942D /* DomainsListPresenter.swift in Sources */,
 				40835CC9245C8AE5007B942D /* Constants.swift in Sources */,
+				40F35E372460C8AF002634C7 /* NavigationBarBackState.swift in Sources */,
+				40F35E392460C8AF002634C7 /* NavigationBarDelegate.swift in Sources */,
 				40835CA2245C728C007B942D /* BaseNavigationViewController.swift in Sources */,
 				40835CB2245C7B42007B942D /* Credentionals.swift in Sources */,
 				40835C8D245C7051007B942D /* LoginViewPresenter.swift in Sources */,
+				40F35E2E2460C8A3002634C7 /* AlertView.swift in Sources */,
 				40835CCB245C8B5A007B942D /* String+Localized.swift in Sources */,
 				40835CDC245C9FDC007B942D /* UIViewController+KeyBoardDismissal.swift in Sources */,
+				40F35E3B2460CA36002634C7 /* OnControllerPresentable.swift in Sources */,
 				40835CB7245C81B5007B942D /* Int + Constants.swift in Sources */,
-				40835CBF245C8562007B942D /* NavigationBarDelegate.swift in Sources */,
+				40F35E3D2460CAD4002634C7 /* UIView+Constraints.swift in Sources */,
 				40835C91245C7072007B942D /* LoginViewConfigurator.swift in Sources */,
 				40835CAF245C7808007B942D /* ProgressContainig.swift in Sources */,
 				40835CFB245D938A007B942D /* Domain.swift in Sources */,
@@ -477,6 +543,7 @@
 				40835CE8245D7D13007B942D /* NetworkManager.swift in Sources */,
 				40835CA9245C7565007B942D /* Model.swift in Sources */,
 				40835C74245B603A007B942D /* AppDelegate.swift in Sources */,
+				40F35E3F2460CC07002634C7 /* GradientView.swift in Sources */,
 				40835C9E245C723F007B942D /* Configurable.swift in Sources */,
 				40835CE5245D7A4F007B942D /* DomainsListConfigurator.swift in Sources */,
 				40835CF8245D91E3007B942D /* ReachabilityManager.swift in Sources */,
@@ -487,14 +554,15 @@
 				40835CCD245C8C0E007B942D /* StartUpFlowType.swift in Sources */,
 				40835CF6245D8D1A007B942D /* UITableViewCell+ReuseIdentifier.swift in Sources */,
 				40835CDF245D7A21007B942D /* DomainsListViewController.swift in Sources */,
-				40835CBA245C823F007B942D /* NavigationBar.swift in Sources */,
 				40835CC6245C8A72007B942D /* String + Constants.swift in Sources */,
+				40F35E2D2460C8A3002634C7 /* AlertViewAction.swift in Sources */,
 				40835C76245B603A007B942D /* SceneDelegate.swift in Sources */,
 				40835C9D245C723F007B942D /* BaseConfigurator.swift in Sources */,
 				40835CAD245C7772007B942D /* ViewController.swift in Sources */,
 				40835CE3245D7A3F007B942D /* DomainsListModel.swift in Sources */,
-				40835CC4245C8897007B942D /* NavigationBarBackState.swift in Sources */,
 				40835CEC245D83FC007B942D /* PlainModelFillable.swift in Sources */,
+				40F35E362460C8AF002634C7 /* NavigationBar.swift in Sources */,
+				40F35E2B2460C8A3002634C7 /* AlertViewState.swift in Sources */,
 				40835CAB245C75FD007B942D /* Protocol.swift in Sources */,
 				40835CF0245D84D7007B942D /* DomainTableViewCell.swift in Sources */,
 			);

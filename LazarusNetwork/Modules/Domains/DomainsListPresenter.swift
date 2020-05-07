@@ -12,6 +12,7 @@ extension Constants.Strings {
     static let domainListTitle = "Domains".localized
     static let noConnection = "No internet connection".localized
     static let errorTitle = "Error".localized
+    static let ok = "Ok".localized
 }
 
 protocol DomainsListPresentable: Presenter {

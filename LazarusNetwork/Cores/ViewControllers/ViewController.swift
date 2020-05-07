@@ -27,6 +27,15 @@ extension ViewController {
         guard let controller = self as? UIViewController else {
             return
         }
-        
+        DispatchQueue.main.async {
+            let alert = AlertView(withTitle: title, andContent: message)
+            
+            alert.add(
+                AlertViewAction(
+                    buttonName: Constants.Strings.ok
+                )
+            )
+            alert.present(on: controller)
+        }
     }
 }
