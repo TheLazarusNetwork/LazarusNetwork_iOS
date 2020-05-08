@@ -23,7 +23,24 @@ class DomainsListConfigurator: BaseConfigurator {
         presenter.controller = viewController
         
         presenter.onGotoDetail = { [weak viewController] in
-
+            let configurator = AddDomainConfigurator()
+            guard let navigationController = viewController?.navigationController else {
+                return
+            }
+            DispatchQueue.main.async {
+                navigationController.pushViewController(configurator.controller, animated: true)
+            }
+        }
+        
+        presenter.onAddDomain = { [weak viewController, email] in
+            let configurator = AddDomainConfigurator()
+            configurator.email = email
+            guard let navigationController = viewController?.navigationController else {
+                return
+            }
+            DispatchQueue.main.async {
+                navigationController.pushViewController(configurator.controller, animated: true)
+            }
         }
         
         return viewController

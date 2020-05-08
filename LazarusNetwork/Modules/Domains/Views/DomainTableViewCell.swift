@@ -9,9 +9,9 @@
 import UIKit
 
 extension Constants.Strings {
-    static let name = "name".localized
-    static let type = "type".localized
-    static let created = "created".localized
+    static let name = "name:".localized
+    static let type = "type:".localized
+    static let created = "created:".localized
 
 }
 
@@ -25,7 +25,7 @@ struct DomainCellPlainModel: PlainModel {
         self.name = domain.domainName
         self.type = domain.domainType
         let df = DateFormatter()
-        df.dateFormat = "DD-Mon-YYYY"
+        df.dateFormat = "MM/dd/yyyy HH:mm:ss"
         self.date = df.string(from: domain.createdAt)
         self.status = domain.domainStatus
     }

@@ -12,7 +12,6 @@ protocol DomainsListViewControllable: ViewController {
     func reloadTable()
     
     func setTitle(title: String)
-    func closeScreen()
     func updateMainInfo(message: String)
 }
 
@@ -28,6 +27,10 @@ class DomainsListViewController: BaseViewController {
         
         tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         
+    }
+    
+    @IBAction func addDomainPressed(_ sender: Any) {
+        currentPresenter.addDomainSelected()
     }
 }
 
@@ -67,10 +70,6 @@ extension DomainsListViewController: DomainsListViewControllable {
     
     func setTitle(title: String) {
         navigationBar?.title = title
-    }
-    
-    func closeScreen() {
-        leftActionSelected(with: self)
     }
     
     func updateMainInfo(message: String) {

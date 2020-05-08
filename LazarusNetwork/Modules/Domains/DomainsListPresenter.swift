@@ -22,14 +22,17 @@ protocol DomainsListPresentable: Presenter {
     func fill(item: PlainModelFillable, atIndex index: Int)
     func item(selectedAtIndex index: Int)
     
+    func addDomainSelected()
+    
     var onGotoDetail: (() -> Void)? { get set }
-
+    var onAddDomain: (() -> Void)? { get set }
 }
 
 class DomainsListPresenter: DomainsListPresentable {
     weak var controller: DomainsListViewControllable?
     
     var onGotoDetail: (() -> Void)?
+    var onAddDomain: (() -> Void)?
     
     private let model: DomainsListModellable
     
@@ -39,7 +42,12 @@ class DomainsListPresenter: DomainsListPresentable {
     
     func viewLoaded() {
         controller?.setTitle(title: Constants.Strings.domainListTitle)
+    }
+    
+    func viewWillAppear() {
+        controller?.showWaitingDialog()
         model.loadDomains { [weak self] result in
+            self?.controller?.removeWaitingDialog()
             switch result {
             case .error(let error):
                 self?.controller?.show(alertWithMessage: error,
@@ -68,5 +76,9 @@ class DomainsListPresenter: DomainsListPresentable {
     
     func item(selectedAtIndex index: Int) {
         onGotoDetail?()
+    }
+    
+    func addDomainSelected() {
+        onAddDomain?()
     }
 }

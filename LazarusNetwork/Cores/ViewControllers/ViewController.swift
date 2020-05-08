@@ -38,4 +38,27 @@ extension ViewController {
             alert.present(on: controller)
         }
     }
+    
+    func showWaitingDialog() {
+        guard let controller = self as? UIViewController else {
+            return
+        }
+        DispatchQueue.main.async {
+            let dialog = WaitingView()
+            dialog.present(on: controller)
+        }
+    }
+    
+    func removeWaitingDialog() {
+        guard let controller = self as? UIViewController else {
+            return
+        }
+        DispatchQueue.main.async {
+            for subView in controller.view.subviews {
+                if let subView = subView as? WaitingView {
+                    subView.removeFromSuperview()
+                }
+            }
+        }
+    }
 }

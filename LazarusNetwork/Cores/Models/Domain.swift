@@ -21,6 +21,16 @@ struct Domain: Decodable {
         case domainStatus = "domain_status"
         case createdAt = "CreatedAt"
         case id = "ID"
+        case domainFirewallPassword = "domain_firewall_password"
+        case deletedAt = "DeletedAt"
+        case updatedAt = "UpdatedAt"
+        case domainVpnExternalPort = "domain_vpn_external_port"
+        case domainRegion = "domain_region"
+        case domainVpnApiUrl = "domain_vpn_api_url"
+        case domainFirewallExternalPort = "domain_firewall_external_port"
+        case domainAdmin = "domain_admin"
+        case domainEmail = "domain_email"
+        case domainVpnApiPort = "domain_vpn_api_port"
     }
     
     let id: Int
@@ -29,4 +39,16 @@ struct Domain: Decodable {
     let domainUUID: String
     let domainType: String
     let domainStatus: Status
+    
+    let domainFirewallPassword: String?
+    let deletedAt: Date?
+    let updatedAt: Date?
+    let domainVpnExternalPort: Int
+    let domainRegion: String
+    let domainVpnApiUrl: String
+    let domainFirewallExternalPort: Int
+    let domainAdmin: String
+    let domainEmail: String
+    let domainVpnApiPort: Int
+
 }

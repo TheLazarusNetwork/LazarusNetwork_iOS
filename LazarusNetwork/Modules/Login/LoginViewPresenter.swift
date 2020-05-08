@@ -44,18 +44,22 @@ class LogInPresenter: LoginPresentable {
     }
     
     func loginSelected(type: LoginType, credentials: Credentionals) {
+        controller?.showWaitingDialog()
         guard !credentials.login.isEmpty else {
+            controller?.removeWaitingDialog()
             controller?.show(alertWithMessage: Constants.Strings.emptyUserName,
                              andTitle: Constants.Strings.errorTitle)
             return
         }
         guard !credentials.password.isEmpty else {
+            controller?.removeWaitingDialog()
             controller?.show(alertWithMessage: Constants.Strings.emptyPassword,
                              andTitle: Constants.Strings.errorTitle)
             return
         }
         
         guard validate(credentials: credentials) else {
+            controller?.removeWaitingDialog()
             controller?.show(alertWithMessage: Constants.Strings.emptyPassword,
                              andTitle: Constants.Strings.errorTitle)
             return

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		40835C74245B603A007B942D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835C73245B603A007B942D /* AppDelegate.swift */; };
 		40835C76245B603A007B942D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835C75245B603A007B942D /* SceneDelegate.swift */; };
-		40835C7B245B603A007B942D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40835C79245B603A007B942D /* Main.storyboard */; };
 		40835C80245B603C007B942D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40835C7E245B603C007B942D /* LaunchScreen.storyboard */; };
 		40835C8B245C7037007B942D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835C8A245C7037007B942D /* LoginViewController.swift */; };
 		40835C8D245C7051007B942D /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835C8C245C7051007B942D /* LoginViewPresenter.swift */; };
@@ -65,13 +64,29 @@
 		40F35E3B2460CA36002634C7 /* OnControllerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E3A2460CA36002634C7 /* OnControllerPresentable.swift */; };
 		40F35E3D2460CAD4002634C7 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E3C2460CAD4002634C7 /* UIView+Constraints.swift */; };
 		40F35E3F2460CC07002634C7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E3E2460CC07002634C7 /* GradientView.swift */; };
+		40F35E4324646DA9002634C7 /* WaitingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40F35E4124646DA8002634C7 /* WaitingView.xib */; };
+		40F35E4424646DA9002634C7 /* WaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E4224646DA8002634C7 /* WaitingView.swift */; };
+		40F35E47246473E6002634C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40F35E46246473E6002634C7 /* Main.storyboard */; };
+		40F35E4E2464781B002634C7 /* AddDomainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E4D2464781B002634C7 /* AddDomainController.swift */; };
+		40F35E502464782E002634C7 /* AddDomainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E4F2464782E002634C7 /* AddDomainPresenter.swift */; };
+		40F35E5224647851002634C7 /* AddDomainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E5124647851002634C7 /* AddDomainConfigurator.swift */; };
+		40F35E5424647914002634C7 /* AddDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E5324647914002634C7 /* AddDomainModel.swift */; };
+		40F35E562464AF97002634C7 /* DomainTypeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E552464AF97002634C7 /* DomainTypeResponse.swift */; };
+		40F35E5924654356002634C7 /* SelectableDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E5824654356002634C7 /* SelectableDialog.swift */; };
+		40F35E5B24654394002634C7 /* SelectableDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40F35E5A24654394002634C7 /* SelectableDialog.xib */; };
+		40F35E5E2465496B002634C7 /* SelectableIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E5D2465496B002634C7 /* SelectableIView.swift */; };
+		40F35E602465497F002634C7 /* SelectableIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40F35E5F2465497F002634C7 /* SelectableIView.xib */; };
+		40F35E6324654AF1002634C7 /* SelectableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E6224654AF1002634C7 /* SelectableViewModel.swift */; };
+		40F35E6524654C1A002634C7 /* SelectableItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E6424654C1A002634C7 /* SelectableItemModel.swift */; };
+		40F35E6924654D9E002634C7 /* SelectableItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E6724654D9E002634C7 /* SelectableItemTableViewCell.swift */; };
+		40F35E6A24654D9E002634C7 /* SelectableItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40F35E6824654D9E002634C7 /* SelectableItemTableViewCell.xib */; };
+		40F35E6C24659EEF002634C7 /* DomainCreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E6B24659EEF002634C7 /* DomainCreateResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		40835C70245B603A007B942D /* LazarusNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazarusNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40835C73245B603A007B942D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40835C75245B603A007B942D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		40835C7A245B603A007B942D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40835C7F245B603C007B942D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40835C81245B603C007B942D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40835C8A245C7037007B942D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +143,23 @@
 		40F35E3A2460CA36002634C7 /* OnControllerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnControllerPresentable.swift; sourceTree = "<group>"; };
 		40F35E3C2460CAD4002634C7 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		40F35E3E2460CC07002634C7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		40F35E4124646DA8002634C7 /* WaitingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaitingView.xib; sourceTree = "<group>"; };
+		40F35E4224646DA8002634C7 /* WaitingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
+		40F35E46246473E6002634C7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		40F35E4D2464781B002634C7 /* AddDomainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDomainController.swift; sourceTree = "<group>"; };
+		40F35E4F2464782E002634C7 /* AddDomainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDomainPresenter.swift; sourceTree = "<group>"; };
+		40F35E5124647851002634C7 /* AddDomainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDomainConfigurator.swift; sourceTree = "<group>"; };
+		40F35E5324647914002634C7 /* AddDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDomainModel.swift; sourceTree = "<group>"; };
+		40F35E552464AF97002634C7 /* DomainTypeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTypeResponse.swift; sourceTree = "<group>"; };
+		40F35E5824654356002634C7 /* SelectableDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableDialog.swift; sourceTree = "<group>"; };
+		40F35E5A24654394002634C7 /* SelectableDialog.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectableDialog.xib; sourceTree = "<group>"; };
+		40F35E5D2465496B002634C7 /* SelectableIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableIView.swift; sourceTree = "<group>"; };
+		40F35E5F2465497F002634C7 /* SelectableIView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectableIView.xib; sourceTree = "<group>"; };
+		40F35E6224654AF1002634C7 /* SelectableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableViewModel.swift; sourceTree = "<group>"; };
+		40F35E6424654C1A002634C7 /* SelectableItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItemModel.swift; sourceTree = "<group>"; };
+		40F35E6724654D9E002634C7 /* SelectableItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItemTableViewCell.swift; sourceTree = "<group>"; };
+		40F35E6824654D9E002634C7 /* SelectableItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectableItemTableViewCell.xib; sourceTree = "<group>"; };
+		40F35E6B24659EEF002634C7 /* DomainCreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainCreateResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +197,6 @@
 				40835C87245C7013007B942D /* Modules */,
 				40835C73245B603A007B942D /* AppDelegate.swift */,
 				40835C75245B603A007B942D /* SceneDelegate.swift */,
-				40835C79245B603A007B942D /* Main.storyboard */,
 				40835C7E245B603C007B942D /* LaunchScreen.storyboard */,
 				40835C81245B603C007B942D /* Info.plist */,
 			);
@@ -175,6 +206,7 @@
 		40835C87245C7013007B942D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				40F35E4C2464781B002634C7 /* AddDomainName */,
 				40835CDD245D76A2007B942D /* Domains */,
 				40835C88245C7013007B942D /* Login */,
 			);
@@ -277,6 +309,7 @@
 		40835CB8245C8222007B942D /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				40F35E4024646DA8002634C7 /* Waiting Dialog */,
 				40F35E2F2460C8AF002634C7 /* NavigationBar */,
 				40F35E232460C8A3002634C7 /* Dialogs */,
 				40F35E3E2460CC07002634C7 /* GradientView.swift */,
@@ -295,6 +328,7 @@
 		40835CCE245C97D9007B942D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				40F35E45246473E6002634C7 /* StoryBoards */,
 				40F35E15245F6326002634C7 /* Images */,
 				40835CF2245D86A7007B942D /* Colors */,
 				40835CCF245C97D9007B942D /* Fonts */,
@@ -365,6 +399,8 @@
 			children = (
 				40835CFA245D938A007B942D /* Domain.swift */,
 				40835CFC245F0D41007B942D /* DomainResponse.swift */,
+				40F35E552464AF97002634C7 /* DomainTypeResponse.swift */,
+				40F35E6B24659EEF002634C7 /* DomainCreateResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -380,6 +416,7 @@
 		40F35E232460C8A3002634C7 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
+				40F35E5724654333002634C7 /* SelectableDialog */,
 				40F35E242460C8A3002634C7 /* AlertView */,
 			);
 			path = Dialogs;
@@ -437,6 +474,73 @@
 				40F35E352460C8AF002634C7 /* NavigationBarDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		40F35E4024646DA8002634C7 /* Waiting Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E4124646DA8002634C7 /* WaitingView.xib */,
+				40F35E4224646DA8002634C7 /* WaitingView.swift */,
+			);
+			path = "Waiting Dialog";
+			sourceTree = "<group>";
+		};
+		40F35E45246473E6002634C7 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E46246473E6002634C7 /* Main.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		40F35E4C2464781B002634C7 /* AddDomainName */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E4D2464781B002634C7 /* AddDomainController.swift */,
+				40F35E4F2464782E002634C7 /* AddDomainPresenter.swift */,
+				40F35E5324647914002634C7 /* AddDomainModel.swift */,
+				40F35E5124647851002634C7 /* AddDomainConfigurator.swift */,
+			);
+			path = AddDomainName;
+			sourceTree = "<group>";
+		};
+		40F35E5724654333002634C7 /* SelectableDialog */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E5C24654946002634C7 /* Views */,
+				40F35E5824654356002634C7 /* SelectableDialog.swift */,
+				40F35E5A24654394002634C7 /* SelectableDialog.xib */,
+			);
+			path = SelectableDialog;
+			sourceTree = "<group>";
+		};
+		40F35E5C24654946002634C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E6624654D69002634C7 /* Cells */,
+				40F35E6124654AE1002634C7 /* Model */,
+				40F35E5D2465496B002634C7 /* SelectableIView.swift */,
+				40F35E5F2465497F002634C7 /* SelectableIView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		40F35E6124654AE1002634C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E6224654AF1002634C7 /* SelectableViewModel.swift */,
+				40F35E6424654C1A002634C7 /* SelectableItemModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40F35E6624654D69002634C7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E6724654D9E002634C7 /* SelectableItemTableViewCell.swift */,
+				40F35E6824654D9E002634C7 /* SelectableItemTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,16 +602,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				40835CDA245C97D9007B942D /* Montserrat-Regular.ttf in Resources */,
+				40F35E4324646DA9002634C7 /* WaitingView.xib in Resources */,
 				40835CD7245C97D9007B942D /* Montserrat-Light.ttf in Resources */,
 				40F35E17245F6326002634C7 /* Assets.xcassets in Resources */,
 				40F35E382460C8AF002634C7 /* NavigationBar.xib in Resources */,
 				40835C80245B603C007B942D /* LaunchScreen.storyboard in Resources */,
+				40F35E6A24654D9E002634C7 /* SelectableItemTableViewCell.xib in Resources */,
 				40835CF1245D84D7007B942D /* DomainTableViewCell.xib in Resources */,
+				40F35E47246473E6002634C7 /* Main.storyboard in Resources */,
 				40835CD6245C97D9007B942D /* Montserrat-Medium.ttf in Resources */,
 				40835CF4245D86BF007B942D /* Colors.xcassets in Resources */,
-				40835C7B245B603A007B942D /* Main.storyboard in Resources */,
 				40835CD9245C97D9007B942D /* Montserrat-SemiBold.ttf in Resources */,
+				40F35E5B24654394002634C7 /* SelectableDialog.xib in Resources */,
 				40835CD8245C97D9007B942D /* Montserrat-Bold.ttf in Resources */,
+				40F35E602465497F002634C7 /* SelectableIView.xib in Resources */,
 				40F35E2C2460C8A3002634C7 /* AlertView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,9 +637,11 @@
 				40F35E2E2460C8A3002634C7 /* AlertView.swift in Sources */,
 				40835CCB245C8B5A007B942D /* String+Localized.swift in Sources */,
 				40835CDC245C9FDC007B942D /* UIViewController+KeyBoardDismissal.swift in Sources */,
+				40F35E5E2465496B002634C7 /* SelectableIView.swift in Sources */,
 				40F35E3B2460CA36002634C7 /* OnControllerPresentable.swift in Sources */,
 				40835CB7245C81B5007B942D /* Int + Constants.swift in Sources */,
 				40F35E3D2460CAD4002634C7 /* UIView+Constraints.swift in Sources */,
+				40F35E5424647914002634C7 /* AddDomainModel.swift in Sources */,
 				40835C91245C7072007B942D /* LoginViewConfigurator.swift in Sources */,
 				40835CAF245C7808007B942D /* ProgressContainig.swift in Sources */,
 				40835CFB245D938A007B942D /* Domain.swift in Sources */,
@@ -540,26 +650,36 @@
 				40835CFD245F0D41007B942D /* DomainResponse.swift in Sources */,
 				40835C8F245C7062007B942D /* LoginViewModel.swift in Sources */,
 				40835CA5245C731A007B942D /* ControllerCreationFabric.swift in Sources */,
+				40F35E562464AF97002634C7 /* DomainTypeResponse.swift in Sources */,
+				40F35E5224647851002634C7 /* AddDomainConfigurator.swift in Sources */,
+				40F35E6924654D9E002634C7 /* SelectableItemTableViewCell.swift in Sources */,
 				40835CE8245D7D13007B942D /* NetworkManager.swift in Sources */,
 				40835CA9245C7565007B942D /* Model.swift in Sources */,
 				40835C74245B603A007B942D /* AppDelegate.swift in Sources */,
 				40F35E3F2460CC07002634C7 /* GradientView.swift in Sources */,
 				40835C9E245C723F007B942D /* Configurable.swift in Sources */,
 				40835CE5245D7A4F007B942D /* DomainsListConfigurator.swift in Sources */,
+				40F35E6C24659EEF002634C7 /* DomainCreateResponse.swift in Sources */,
 				40835CF8245D91E3007B942D /* ReachabilityManager.swift in Sources */,
+				40F35E6524654C1A002634C7 /* SelectableItemModel.swift in Sources */,
 				40835C9F245C723F007B942D /* NavigationControllerEmbedding.swift in Sources */,
+				40F35E502464782E002634C7 /* AddDomainPresenter.swift in Sources */,
 				40835CBC245C8470007B942D /* UIViewLoading.swift in Sources */,
+				40F35E4E2464781B002634C7 /* AddDomainController.swift in Sources */,
 				40835CA7245C7375007B942D /* BaseStartingConfigurator.swift in Sources */,
 				40835CEA245D7E01007B942D /* Controllers.swift in Sources */,
 				40835CCD245C8C0E007B942D /* StartUpFlowType.swift in Sources */,
 				40835CF6245D8D1A007B942D /* UITableViewCell+ReuseIdentifier.swift in Sources */,
+				40F35E6324654AF1002634C7 /* SelectableViewModel.swift in Sources */,
 				40835CDF245D7A21007B942D /* DomainsListViewController.swift in Sources */,
 				40835CC6245C8A72007B942D /* String + Constants.swift in Sources */,
+				40F35E5924654356002634C7 /* SelectableDialog.swift in Sources */,
 				40F35E2D2460C8A3002634C7 /* AlertViewAction.swift in Sources */,
 				40835C76245B603A007B942D /* SceneDelegate.swift in Sources */,
 				40835C9D245C723F007B942D /* BaseConfigurator.swift in Sources */,
 				40835CAD245C7772007B942D /* ViewController.swift in Sources */,
 				40835CE3245D7A3F007B942D /* DomainsListModel.swift in Sources */,
+				40F35E4424646DA9002634C7 /* WaitingView.swift in Sources */,
 				40835CEC245D83FC007B942D /* PlainModelFillable.swift in Sources */,
 				40F35E362460C8AF002634C7 /* NavigationBar.swift in Sources */,
 				40F35E2B2460C8A3002634C7 /* AlertViewState.swift in Sources */,
@@ -571,14 +691,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		40835C79245B603A007B942D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				40835C7A245B603A007B942D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		40835C7E245B603C007B942D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

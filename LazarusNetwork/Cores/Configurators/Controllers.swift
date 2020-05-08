@@ -11,6 +11,7 @@ import UIKit
 enum Controllers {
     case login
     case domains
+    case addDomain
 }
 
 extension Controllers: ControllerCreationable {
@@ -21,6 +22,9 @@ extension Controllers: ControllerCreationable {
             
         case .domains:
             return "DomainsListViewController"
+            
+        case .addDomain:
+            return "AddDomainController"
         }
     }
     
@@ -36,6 +40,9 @@ extension Controllers {
             return LogInConfigurator()
             
         case .domains:
+            return DomainsListConfigurator()
+            
+        case .addDomain:
             return DomainsListConfigurator()
         }
     }

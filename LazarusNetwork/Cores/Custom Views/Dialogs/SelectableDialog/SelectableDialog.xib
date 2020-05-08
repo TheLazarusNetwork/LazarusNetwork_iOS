@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectableDialog" customModule="LazarusNetwork" customModuleProvider="target">
+            <connections>
+                <outlet property="okButton" destination="N48-Gy-ZFD" id="d5M-FP-uqp"/>
+                <outlet property="selectableView" destination="cod-HE-cjX" id="YxL-Ea-Fya"/>
+                <outlet property="titleLabel" destination="gxB-Vd-6cn" id="ctl-DE-Aqv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="555" height="783"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0cQ-Wp-o8s">
+                    <rect key="frame" x="0.0" y="0.0" width="555" height="783"/>
+                    <subviews>
+                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51c-n1-Rhw">
+                            <rect key="frame" x="0.0" y="0.0" width="555" height="783"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTB-HN-oXh">
+                                    <rect key="frame" x="122.5" y="226.5" width="310" height="330"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select plan" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxB-Vd-6cn">
+                                            <rect key="frame" x="38" y="20" width="234" height="21"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
+                                            <color key="textColor" name="DarkGreyColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cod-HE-cjX" customClass="SelectableIView" customModule="LazarusNetwork" customModuleProvider="target">
+                                            <rect key="frame" x="38" y="57" width="234" height="200"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sCJ-rv-E60">
+                                            <rect key="frame" x="65" y="277" width="180" height="33"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNx-gO-JKa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="33"/>
+                                                    <color key="backgroundColor" name="DarkGreyColor"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                                    <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
+                                                    <state key="normal" title="Cancel">
+                                                        <color key="titleColor" name="GreyColor"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="cancelSelected:" destination="-1" eventType="touchUpInside" id="dFv-RN-mPg"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N48-Gy-ZFD">
+                                                    <rect key="frame" x="100" y="0.0" width="80" height="33"/>
+                                                    <color key="backgroundColor" name="DarkGreyColor"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                                    <state key="normal" title="OK">
+                                                        <color key="titleColor" name="GreyColor"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="okSelected:" destination="-1" eventType="touchUpInside" id="qy5-kR-p7R"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="33" id="5pc-JA-Yqf"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="GreyColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="310" id="0Io-UC-EyS"/>
+                                        <constraint firstAttribute="height" constant="330" id="5bQ-JX-q9w"/>
+                                        <constraint firstItem="gxB-Vd-6cn" firstAttribute="leading" secondItem="dTB-HN-oXh" secondAttribute="leading" constant="38" id="7w8-dO-puz"/>
+                                        <constraint firstItem="gxB-Vd-6cn" firstAttribute="top" secondItem="dTB-HN-oXh" secondAttribute="top" constant="20" id="EPO-hf-WeJ"/>
+                                        <constraint firstItem="cod-HE-cjX" firstAttribute="leading" secondItem="gxB-Vd-6cn" secondAttribute="leading" id="JOW-Aw-7vH"/>
+                                        <constraint firstAttribute="bottom" secondItem="sCJ-rv-E60" secondAttribute="bottom" constant="20" id="MlC-kr-LVr"/>
+                                        <constraint firstItem="cod-HE-cjX" firstAttribute="trailing" secondItem="gxB-Vd-6cn" secondAttribute="trailing" id="S9V-xc-VDs"/>
+                                        <constraint firstItem="cod-HE-cjX" firstAttribute="top" secondItem="gxB-Vd-6cn" secondAttribute="bottom" constant="16" id="Z70-We-GEz"/>
+                                        <constraint firstItem="sCJ-rv-E60" firstAttribute="top" secondItem="cod-HE-cjX" secondAttribute="bottom" constant="20" id="k7N-z4-IYI"/>
+                                        <constraint firstAttribute="trailing" secondItem="gxB-Vd-6cn" secondAttribute="trailing" constant="38" id="lgZ-xd-pj1"/>
+                                        <constraint firstItem="sCJ-rv-E60" firstAttribute="centerX" secondItem="dTB-HN-oXh" secondAttribute="centerX" id="xJv-PY-y4J"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <integer key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="0.30208333333333331" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dTB-HN-oXh" secondAttribute="trailing" constant="20" id="2QX-yi-c8G"/>
+                                <constraint firstItem="dTB-HN-oXh" firstAttribute="centerY" secondItem="51c-n1-Rhw" secondAttribute="centerY" id="DtU-KP-1Jq"/>
+                                <constraint firstItem="dTB-HN-oXh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="51c-n1-Rhw" secondAttribute="top" constant="40" id="cgS-gt-5KT"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dTB-HN-oXh" secondAttribute="bottom" constant="40" id="hoV-sd-M3B"/>
+                                <constraint firstItem="dTB-HN-oXh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="51c-n1-Rhw" secondAttribute="leading" constant="20" id="vmg-8I-Ikd"/>
+                                <constraint firstItem="dTB-HN-oXh" firstAttribute="centerX" secondItem="51c-n1-Rhw" secondAttribute="centerX" id="z4B-Lt-kse"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="51c-n1-Rhw" firstAttribute="height" secondItem="0cQ-Wp-o8s" secondAttribute="height" priority="999" id="2Oy-kM-Prk"/>
+                        <constraint firstAttribute="bottom" secondItem="51c-n1-Rhw" secondAttribute="bottom" id="4EB-E7-wSr"/>
+                        <constraint firstAttribute="trailing" secondItem="51c-n1-Rhw" secondAttribute="trailing" id="MWN-bm-zYj"/>
+                        <constraint firstItem="51c-n1-Rhw" firstAttribute="top" secondItem="0cQ-Wp-o8s" secondAttribute="top" id="Xyf-m8-N0c"/>
+                        <constraint firstItem="51c-n1-Rhw" firstAttribute="leading" secondItem="0cQ-Wp-o8s" secondAttribute="leading" id="cjp-43-yYi"/>
+                        <constraint firstItem="51c-n1-Rhw" firstAttribute="width" secondItem="0cQ-Wp-o8s" secondAttribute="width" id="lwA-JU-xxC"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="0cQ-Wp-o8s" secondAttribute="trailing" id="2jz-kP-2wf"/>
+                <constraint firstItem="0cQ-Wp-o8s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4xp-17-iDd"/>
+                <constraint firstItem="0cQ-Wp-o8s" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MMQ-O6-xL8"/>
+                <constraint firstAttribute="bottom" secondItem="0cQ-Wp-o8s" secondAttribute="bottom" id="Ukc-mG-Pil"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="170.28985507246378" y="104.12946428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="DarkGreyColor">
+            <color red="0.21199999749660492" green="0.21199999749660492" blue="0.21199999749660492" alpha="0.8970000147819519" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GreyColor">
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

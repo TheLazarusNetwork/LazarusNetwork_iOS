@@ -35,12 +35,12 @@ class LogInConfigurator: BaseConfiguratorContainingControllerType {
         createdController.presenter = presenter
         
         presenter.onLoggedIn = { [weak createdController] email in
+            createdController?.removeWaitingDialog()
             let configurator = DomainsListConfigurator()
             configurator.email = email
             guard let navigationController = createdController?.navigationController else {
                 return
             }
-            
             DispatchQueue.main.async {
                 navigationController.pushViewController(configurator.controller, animated: true)
             }
