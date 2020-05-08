@@ -24,14 +24,14 @@ protocol DomainsListPresentable: Presenter {
     
     func addDomainSelected()
     
-    var onGotoDetail: (() -> Void)? { get set }
+    var onGotoDetail: ((Domain) -> Void)? { get set }
     var onAddDomain: (() -> Void)? { get set }
 }
 
 class DomainsListPresenter: DomainsListPresentable {
     weak var controller: DomainsListViewControllable?
     
-    var onGotoDetail: (() -> Void)?
+    var onGotoDetail: ((Domain) -> Void)?
     var onAddDomain: (() -> Void)?
     
     private let model: DomainsListModellable
@@ -58,6 +58,9 @@ class DomainsListPresenter: DomainsListPresentable {
                 
             case .success:
                 self?.controller?.reloadTable()
+                if (self?.model.domainsList.count ?? 0) > 2 {
+                    self?.controller?.hideAddDomainButton()
+                }
             }
         }
     }
@@ -75,7 +78,11 @@ class DomainsListPresenter: DomainsListPresentable {
     }
     
     func item(selectedAtIndex index: Int) {
-        onGotoDetail?()
+        guard model.domainsList.indices.contains(index) else {
+            return
+        }
+        
+        onGotoDetail?(model.domainsList[index].domain)
     }
     
     func addDomainSelected() {

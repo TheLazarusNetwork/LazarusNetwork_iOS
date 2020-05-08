@@ -20,8 +20,10 @@ struct DomainCellPlainModel: PlainModel {
     let type: String
     let date: String
     let status: Status
+    let domain: Domain
     
     init(_ domain: Domain) {
+        self.domain = domain
         self.name = domain.domainName
         self.type = domain.domainType
         let df = DateFormatter()

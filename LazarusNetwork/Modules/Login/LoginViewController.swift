@@ -27,6 +27,14 @@ class LoginViewController: BaseViewController {
         configureUiComponents()
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        passwordTextField.text = .empty
+        hideKeyboardWhenTappedAround()
+    }
+    
     @IBAction func logInButtonSelected(_ sender: Any) {
         let credentionals = Credentionals(login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
         currentPresenter.loginSelected(type: .existedUser, credentials: credentionals)
@@ -36,12 +44,6 @@ class LoginViewController: BaseViewController {
         let credentionals = Credentionals(login: loginTextField.text ?? "",
                                           password: passwordTextField.text ?? "")
         currentPresenter.loginSelected(type: .newUser, credentials: credentionals)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        hideKeyboardWhenTappedAround()
     }
     
     private func configureUiComponents() {

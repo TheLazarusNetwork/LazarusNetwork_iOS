@@ -309,6 +309,18 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.047058823529411764" green="0.12941176470588234" blue="0.32156862745098036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -331,6 +343,7 @@
                         <viewLayoutGuide key="safeArea" id="YwZ-Fv-PpQ"/>
                     </view>
                     <connections>
+                        <outlet property="addDomainView" destination="qP5-2y-Cdw" id="nMc-t8-nhk"/>
                         <outlet property="messageLabel" destination="CWf-fz-7NW" id="2cu-ad-b5X"/>
                         <outlet property="messageView" destination="wLG-rm-3XT" id="4h3-sT-CYg"/>
                         <outlet property="navigationBar" destination="UMK-ia-j7r" id="2zv-a0-f8L"/>
@@ -691,6 +704,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KjQ-SF-W8Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1732" y="121.88905547226388"/>
+        </scene>
+        <!--Service List View Controller-->
+        <scene sceneID="aVv-QM-KID">
+            <objects>
+                <viewController storyboardIdentifier="ServiceListViewController" id="bEq-28-BgD" customClass="ServiceListViewController" customModule="LazarusNetwork" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LH9-XE-IQ3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhO-19-oAk" customClass="NavigationBar" customModule="LazarusNetwork" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="CpL-uY-mj1"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isLeftButtonDisabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBackModeEnabled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="bEq-28-BgD" id="PeR-da-mIO"/>
+                                </connections>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AOU-dL-hDg">
+                                <rect key="frame" x="0.0" y="54" width="375" height="613"/>
+                                <color key="backgroundColor" name="GreyColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bEq-28-BgD" id="wdy-58-yaX"/>
+                                    <outlet property="delegate" destination="bEq-28-BgD" id="Mq1-os-abe"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="GreyColor"/>
+                        <constraints>
+                            <constraint firstItem="AOU-dL-hDg" firstAttribute="leading" secondItem="5Ac-XP-dAb" secondAttribute="leading" id="2aE-ez-gL4"/>
+                            <constraint firstItem="AOU-dL-hDg" firstAttribute="bottom" secondItem="5Ac-XP-dAb" secondAttribute="bottom" id="4rS-m9-FjX"/>
+                            <constraint firstItem="yhO-19-oAk" firstAttribute="top" secondItem="5Ac-XP-dAb" secondAttribute="top" id="NBf-7c-QVM"/>
+                            <constraint firstItem="yhO-19-oAk" firstAttribute="trailing" secondItem="5Ac-XP-dAb" secondAttribute="trailing" id="R98-Nl-cUS"/>
+                            <constraint firstItem="yhO-19-oAk" firstAttribute="leading" secondItem="5Ac-XP-dAb" secondAttribute="leading" id="XVk-UK-k8j"/>
+                            <constraint firstItem="AOU-dL-hDg" firstAttribute="trailing" secondItem="5Ac-XP-dAb" secondAttribute="trailing" id="Ylw-HR-LnH"/>
+                            <constraint firstItem="AOU-dL-hDg" firstAttribute="top" secondItem="yhO-19-oAk" secondAttribute="bottom" id="hI2-LA-s2I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5Ac-XP-dAb"/>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="yhO-19-oAk" id="znT-DD-hfF"/>
+                        <outlet property="tableView" destination="AOU-dL-hDg" id="IX7-KK-7EZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1lI-Gm-kTg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2436" y="118.29085457271366"/>
         </scene>
     </scenes>
     <resources>

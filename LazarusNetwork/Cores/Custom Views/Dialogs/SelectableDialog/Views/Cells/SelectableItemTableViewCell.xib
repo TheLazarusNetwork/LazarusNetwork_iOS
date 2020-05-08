@@ -79,7 +79,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="checkMark" width="910" height="512"/>
+        <image name="checkMark" width="512" height="384"/>
         <namedColor name="DarkGreyColor">
             <color red="0.21199999749660492" green="0.21199999749660492" blue="0.21199999749660492" alpha="0.8970000147819519" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

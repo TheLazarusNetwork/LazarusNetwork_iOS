@@ -22,8 +22,9 @@ class DomainsListConfigurator: BaseConfigurator {
         viewController.presenter = presenter
         presenter.controller = viewController
         
-        presenter.onGotoDetail = { [weak viewController] in
-            let configurator = AddDomainConfigurator()
+        presenter.onGotoDetail = { [weak viewController] domain in
+            let configurator = ServiceListConfigurator()
+            configurator.domain = domain
             guard let navigationController = viewController?.navigationController else {
                 return
             }

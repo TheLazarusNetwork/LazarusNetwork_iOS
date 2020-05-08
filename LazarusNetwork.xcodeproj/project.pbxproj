@@ -81,6 +81,11 @@
 		40F35E6924654D9E002634C7 /* SelectableItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E6724654D9E002634C7 /* SelectableItemTableViewCell.swift */; };
 		40F35E6A24654D9E002634C7 /* SelectableItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40F35E6824654D9E002634C7 /* SelectableItemTableViewCell.xib */; };
 		40F35E6C24659EEF002634C7 /* DomainCreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E6B24659EEF002634C7 /* DomainCreateResponse.swift */; };
+		40F35E6F2465CB62002634C7 /* ServiceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E6E2465CB62002634C7 /* ServiceListViewController.swift */; };
+		40F35E712465CB88002634C7 /* ServiceListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E702465CB88002634C7 /* ServiceListPresenter.swift */; };
+		40F35E732465CBA8002634C7 /* ServiceListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E722465CBA8002634C7 /* ServiceListConfigurator.swift */; };
+		40F35E772465D496002634C7 /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E752465D496002634C7 /* ServiceTableViewCell.swift */; };
+		40F35E782465D496002634C7 /* ServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40F35E762465D496002634C7 /* ServiceTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +165,11 @@
 		40F35E6724654D9E002634C7 /* SelectableItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItemTableViewCell.swift; sourceTree = "<group>"; };
 		40F35E6824654D9E002634C7 /* SelectableItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectableItemTableViewCell.xib; sourceTree = "<group>"; };
 		40F35E6B24659EEF002634C7 /* DomainCreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainCreateResponse.swift; sourceTree = "<group>"; };
+		40F35E6E2465CB62002634C7 /* ServiceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListViewController.swift; sourceTree = "<group>"; };
+		40F35E702465CB88002634C7 /* ServiceListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListPresenter.swift; sourceTree = "<group>"; };
+		40F35E722465CBA8002634C7 /* ServiceListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListConfigurator.swift; sourceTree = "<group>"; };
+		40F35E752465D496002634C7 /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
+		40F35E762465D496002634C7 /* ServiceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +216,7 @@
 		40835C87245C7013007B942D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				40F35E6D2465CAD9002634C7 /* Services List */,
 				40F35E4C2464781B002634C7 /* AddDomainName */,
 				40835CDD245D76A2007B942D /* Domains */,
 				40835C88245C7013007B942D /* Login */,
@@ -543,6 +554,26 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		40F35E6D2465CAD9002634C7 /* Services List */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E742465D47E002634C7 /* Views */,
+				40F35E6E2465CB62002634C7 /* ServiceListViewController.swift */,
+				40F35E702465CB88002634C7 /* ServiceListPresenter.swift */,
+				40F35E722465CBA8002634C7 /* ServiceListConfigurator.swift */,
+			);
+			path = "Services List";
+			sourceTree = "<group>";
+		};
+		40F35E742465D47E002634C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40F35E752465D496002634C7 /* ServiceTableViewCell.swift */,
+				40F35E762465D496002634C7 /* ServiceTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -616,6 +647,7 @@
 				40F35E5B24654394002634C7 /* SelectableDialog.xib in Resources */,
 				40835CD8245C97D9007B942D /* Montserrat-Bold.ttf in Resources */,
 				40F35E602465497F002634C7 /* SelectableIView.xib in Resources */,
+				40F35E782465D496002634C7 /* ServiceTableViewCell.xib in Resources */,
 				40F35E2C2460C8A3002634C7 /* AlertView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,6 +678,7 @@
 				40835CAF245C7808007B942D /* ProgressContainig.swift in Sources */,
 				40835CFB245D938A007B942D /* Domain.swift in Sources */,
 				40835CB4245C809A007B942D /* BaseViewController.swift in Sources */,
+				40F35E732465CBA8002634C7 /* ServiceListConfigurator.swift in Sources */,
 				40835C8B245C7037007B942D /* LoginViewController.swift in Sources */,
 				40835CFD245F0D41007B942D /* DomainResponse.swift in Sources */,
 				40835C8F245C7062007B942D /* LoginViewModel.swift in Sources */,
@@ -657,6 +690,7 @@
 				40835CA9245C7565007B942D /* Model.swift in Sources */,
 				40835C74245B603A007B942D /* AppDelegate.swift in Sources */,
 				40F35E3F2460CC07002634C7 /* GradientView.swift in Sources */,
+				40F35E712465CB88002634C7 /* ServiceListPresenter.swift in Sources */,
 				40835C9E245C723F007B942D /* Configurable.swift in Sources */,
 				40835CE5245D7A4F007B942D /* DomainsListConfigurator.swift in Sources */,
 				40F35E6C24659EEF002634C7 /* DomainCreateResponse.swift in Sources */,
@@ -674,6 +708,7 @@
 				40835CDF245D7A21007B942D /* DomainsListViewController.swift in Sources */,
 				40835CC6245C8A72007B942D /* String + Constants.swift in Sources */,
 				40F35E5924654356002634C7 /* SelectableDialog.swift in Sources */,
+				40F35E772465D496002634C7 /* ServiceTableViewCell.swift in Sources */,
 				40F35E2D2460C8A3002634C7 /* AlertViewAction.swift in Sources */,
 				40835C76245B603A007B942D /* SceneDelegate.swift in Sources */,
 				40835C9D245C723F007B942D /* BaseConfigurator.swift in Sources */,
@@ -685,6 +720,7 @@
 				40F35E2B2460C8A3002634C7 /* AlertViewState.swift in Sources */,
 				40835CAB245C75FD007B942D /* Protocol.swift in Sources */,
 				40835CF0245D84D7007B942D /* DomainTableViewCell.swift in Sources */,
+				40F35E6F2465CB62002634C7 /* ServiceListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,29 +1,22 @@
 //
-//  DomainsListViewController.swift
+//  ServiceListViewController.swift
 //  LazarusNetwork
 //
-//  Created by Melany Gulianovych on 02.05.2020.
+//  Created by Melany Gulianovych on 08.05.2020.
 //  Copyright © 2020 Melany Gulianovych. All rights reserved.
 //
 
 import UIKit
 
-protocol DomainsListViewControllable: ViewController {
-    func reloadTable()
-    
+protocol ServiceListViewControllable: ViewController {
     func setTitle(title: String)
-    func updateMainInfo(message: String)
-    func hideAddDomainButton()
+    func reloadTable()
 }
 
-class DomainsListViewController: BaseViewController {
+class ServiceListViewController: BaseViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var messageView: UIView!
     
-    @IBOutlet weak var addDomainView: UIView!
-    
-    private let cellIdentifier = DomainTableViewCell.reuseIdentifier
+    private let cellIdentifier = ServiceTableViewCell.reuseIdentifier
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +24,9 @@ class DomainsListViewController: BaseViewController {
         tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         
     }
-    
-    @IBAction func addDomainPressed(_ sender: Any) {
-        currentPresenter.addDomainSelected()
-    }
 }
 
-extension DomainsListViewController: UITableViewDataSource {
+extension ServiceListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentPresenter.itemsCount
     }
@@ -58,13 +47,13 @@ extension DomainsListViewController: UITableViewDataSource {
     }
 }
 
-extension DomainsListViewController: UITableViewDelegate {
+extension ServiceListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currentPresenter.item(selectedAtIndex: indexPath.row)
     }
 }
 
-extension DomainsListViewController: DomainsListViewControllable {
+extension ServiceListViewController: ServiceListViewControllable {
     func reloadTable() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -74,21 +63,8 @@ extension DomainsListViewController: DomainsListViewControllable {
     func setTitle(title: String) {
         navigationBar?.title = title
     }
-    
-    func updateMainInfo(message: String) {
-        DispatchQueue.main.async {
-            self.messageLabel.text = message
-            self.messageView.isHidden = false
-        }
-    }
-    
-    func hideAddDomainButton() {
-        DispatchQueue.main.async {
-            self.addDomainView.isHidden = true
-        }
-    }
 }
 
-extension DomainsListViewController: ViewControllerWithDefinedPresenter {
-    typealias CurrentPresenter = DomainsListPresentable
+extension ServiceListViewController: ViewControllerWithDefinedPresenter {
+    typealias CurrentPresenter = ServiceListPresentable
 }
