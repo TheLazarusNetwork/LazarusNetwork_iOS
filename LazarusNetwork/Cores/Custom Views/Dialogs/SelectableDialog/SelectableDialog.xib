@@ -40,7 +40,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cod-HE-cjX" customClass="SelectableIView" customModule="LazarusNetwork" customModuleProvider="target">
-                                            <rect key="frame" x="38" y="57" width="234" height="200"/>
+                                            <rect key="frame" x="38" y="45" width="234" height="220"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sCJ-rv-E60">
@@ -94,14 +94,26 @@
                                         <constraint firstItem="cod-HE-cjX" firstAttribute="leading" secondItem="gxB-Vd-6cn" secondAttribute="leading" id="JOW-Aw-7vH"/>
                                         <constraint firstAttribute="bottom" secondItem="sCJ-rv-E60" secondAttribute="bottom" constant="20" id="MlC-kr-LVr"/>
                                         <constraint firstItem="cod-HE-cjX" firstAttribute="trailing" secondItem="gxB-Vd-6cn" secondAttribute="trailing" id="S9V-xc-VDs"/>
-                                        <constraint firstItem="cod-HE-cjX" firstAttribute="top" secondItem="gxB-Vd-6cn" secondAttribute="bottom" constant="16" id="Z70-We-GEz"/>
-                                        <constraint firstItem="sCJ-rv-E60" firstAttribute="top" secondItem="cod-HE-cjX" secondAttribute="bottom" constant="20" id="k7N-z4-IYI"/>
+                                        <constraint firstItem="cod-HE-cjX" firstAttribute="top" secondItem="gxB-Vd-6cn" secondAttribute="bottom" constant="4" id="Z70-We-GEz"/>
+                                        <constraint firstItem="sCJ-rv-E60" firstAttribute="top" secondItem="cod-HE-cjX" secondAttribute="bottom" constant="12" id="k7N-z4-IYI"/>
                                         <constraint firstAttribute="trailing" secondItem="gxB-Vd-6cn" secondAttribute="trailing" constant="38" id="lgZ-xd-pj1"/>
                                         <constraint firstItem="sCJ-rv-E60" firstAttribute="centerX" secondItem="dTB-HN-oXh" secondAttribute="centerX" id="xJv-PY-y4J"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                             <integer key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                            <real key="value" value="0.20000000000000001"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <integer key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" red="0.047058823529411764" green="0.12941176470588234" blue="0.32156862745098036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>

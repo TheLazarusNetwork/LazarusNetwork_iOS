@@ -32,16 +32,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbO-xU-KEK">
-                    <rect key="frame" x="44.5" y="156" width="331" height="256"/>
+                    <rect key="frame" x="44.5" y="155.5" width="331" height="257"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="251" verticalCompressionResistancePriority="998" text="What we found" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dY4-ac-ZU0">
-                            <rect key="frame" x="18" y="30" width="295" height="21"/>
+                            <rect key="frame" x="18" y="30" width="295" height="22"/>
                             <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
                             <color key="textColor" name="DarkGreyColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fj6-NW-TFN">
-                            <rect key="frame" x="18" y="54" width="295" height="102"/>
+                            <rect key="frame" x="18" y="55" width="295" height="102"/>
                             <subviews>
                                 <textView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="999" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fff-ZG-HWB">
                                     <rect key="frame" x="0.0" y="17" width="295" height="68"/>
@@ -80,7 +80,7 @@
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="JGD-kh-oqT">
-                            <rect key="frame" x="18" y="168.5" width="295" height="60"/>
+                            <rect key="frame" x="18" y="169.5" width="295" height="60"/>
                             <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" priority="999" constant="60" id="Vbw-WA-xCT"/>
@@ -105,7 +105,7 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <integer key="value" value="10"/>
+                            <integer key="value" value="8"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                             <size key="value" width="0.0" height="0.0"/>
