@@ -52,6 +52,13 @@
 		40835CF8245D91E3007B942D /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CF7245D91E3007B942D /* ReachabilityManager.swift */; };
 		40835CFB245D938A007B942D /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CFA245D938A007B942D /* Domain.swift */; };
 		40835CFD245F0D41007B942D /* DomainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835CFC245F0D41007B942D /* DomainResponse.swift */; };
+		40EB32632465FF1800EDA669 /* VPNClientListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB32622465FF1800EDA669 /* VPNClientListViewController.swift */; };
+		40EB32652465FF3200EDA669 /* VPNClientListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB32642465FF3200EDA669 /* VPNClientListPresenter.swift */; };
+		40EB32672465FF4A00EDA669 /* VPNClientListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB32662465FF4A00EDA669 /* VPNClientListModel.swift */; };
+		40EB32692465FF6100EDA669 /* VPNClientListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB32682465FF6100EDA669 /* VPNClientListConfigurator.swift */; };
+		40EB326D2466E32C00EDA669 /* ClientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB326B2466E32C00EDA669 /* ClientTableViewCell.swift */; };
+		40EB326E2466E32C00EDA669 /* ClientTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40EB326C2466E32C00EDA669 /* ClientTableViewCell.xib */; };
+		40EB32702466FF3300EDA669 /* VPNClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EB326F2466FF3300EDA669 /* VPNClient.swift */; };
 		40F35E17245F6326002634C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40F35E16245F6326002634C7 /* Assets.xcassets */; };
 		40F35E2B2460C8A3002634C7 /* AlertViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E262460C8A3002634C7 /* AlertViewState.swift */; };
 		40F35E2C2460C8A3002634C7 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40F35E272460C8A3002634C7 /* AlertView.xib */; };
@@ -136,6 +143,13 @@
 		40835CF7245D91E3007B942D /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		40835CFA245D938A007B942D /* Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
 		40835CFC245F0D41007B942D /* DomainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainResponse.swift; sourceTree = "<group>"; };
+		40EB32622465FF1800EDA669 /* VPNClientListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNClientListViewController.swift; sourceTree = "<group>"; };
+		40EB32642465FF3200EDA669 /* VPNClientListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNClientListPresenter.swift; sourceTree = "<group>"; };
+		40EB32662465FF4A00EDA669 /* VPNClientListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNClientListModel.swift; sourceTree = "<group>"; };
+		40EB32682465FF6100EDA669 /* VPNClientListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNClientListConfigurator.swift; sourceTree = "<group>"; };
+		40EB326B2466E32C00EDA669 /* ClientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTableViewCell.swift; sourceTree = "<group>"; };
+		40EB326C2466E32C00EDA669 /* ClientTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientTableViewCell.xib; sourceTree = "<group>"; };
+		40EB326F2466FF3300EDA669 /* VPNClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNClient.swift; sourceTree = "<group>"; };
 		40F35E16245F6326002634C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40F35E262460C8A3002634C7 /* AlertViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewState.swift; sourceTree = "<group>"; };
 		40F35E272460C8A3002634C7 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
@@ -216,6 +230,7 @@
 		40835C87245C7013007B942D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				40EB32612465FEE100EDA669 /* VPN */,
 				40F35E6D2465CAD9002634C7 /* Services List */,
 				40F35E4C2464781B002634C7 /* AddDomainName */,
 				40835CDD245D76A2007B942D /* Domains */,
@@ -412,8 +427,30 @@
 				40835CFC245F0D41007B942D /* DomainResponse.swift */,
 				40F35E552464AF97002634C7 /* DomainTypeResponse.swift */,
 				40F35E6B24659EEF002634C7 /* DomainCreateResponse.swift */,
+				40EB326F2466FF3300EDA669 /* VPNClient.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		40EB32612465FEE100EDA669 /* VPN */ = {
+			isa = PBXGroup;
+			children = (
+				40EB326A2466E31600EDA669 /* Views */,
+				40EB32622465FF1800EDA669 /* VPNClientListViewController.swift */,
+				40EB32642465FF3200EDA669 /* VPNClientListPresenter.swift */,
+				40EB32662465FF4A00EDA669 /* VPNClientListModel.swift */,
+				40EB32682465FF6100EDA669 /* VPNClientListConfigurator.swift */,
+			);
+			path = VPN;
+			sourceTree = "<group>";
+		};
+		40EB326A2466E31600EDA669 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40EB326B2466E32C00EDA669 /* ClientTableViewCell.swift */,
+				40EB326C2466E32C00EDA669 /* ClientTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		40F35E15245F6326002634C7 /* Images */ = {
@@ -644,6 +681,7 @@
 				40835CD6245C97D9007B942D /* Montserrat-Medium.ttf in Resources */,
 				40835CF4245D86BF007B942D /* Colors.xcassets in Resources */,
 				40835CD9245C97D9007B942D /* Montserrat-SemiBold.ttf in Resources */,
+				40EB326E2466E32C00EDA669 /* ClientTableViewCell.xib in Resources */,
 				40F35E5B24654394002634C7 /* SelectableDialog.xib in Resources */,
 				40835CD8245C97D9007B942D /* Montserrat-Bold.ttf in Resources */,
 				40F35E602465497F002634C7 /* SelectableIView.xib in Resources */,
@@ -662,6 +700,7 @@
 				40835CE1245D7A32007B942D /* DomainsListPresenter.swift in Sources */,
 				40835CC9245C8AE5007B942D /* Constants.swift in Sources */,
 				40F35E372460C8AF002634C7 /* NavigationBarBackState.swift in Sources */,
+				40EB32672465FF4A00EDA669 /* VPNClientListModel.swift in Sources */,
 				40F35E392460C8AF002634C7 /* NavigationBarDelegate.swift in Sources */,
 				40835CA2245C728C007B942D /* BaseNavigationViewController.swift in Sources */,
 				40835CB2245C7B42007B942D /* Credentionals.swift in Sources */,
@@ -689,6 +728,7 @@
 				40835CE8245D7D13007B942D /* NetworkManager.swift in Sources */,
 				40835CA9245C7565007B942D /* Model.swift in Sources */,
 				40835C74245B603A007B942D /* AppDelegate.swift in Sources */,
+				40EB32652465FF3200EDA669 /* VPNClientListPresenter.swift in Sources */,
 				40F35E3F2460CC07002634C7 /* GradientView.swift in Sources */,
 				40F35E712465CB88002634C7 /* ServiceListPresenter.swift in Sources */,
 				40835C9E245C723F007B942D /* Configurable.swift in Sources */,
@@ -696,6 +736,7 @@
 				40F35E6C24659EEF002634C7 /* DomainCreateResponse.swift in Sources */,
 				40835CF8245D91E3007B942D /* ReachabilityManager.swift in Sources */,
 				40F35E6524654C1A002634C7 /* SelectableItemModel.swift in Sources */,
+				40EB32632465FF1800EDA669 /* VPNClientListViewController.swift in Sources */,
 				40835C9F245C723F007B942D /* NavigationControllerEmbedding.swift in Sources */,
 				40F35E502464782E002634C7 /* AddDomainPresenter.swift in Sources */,
 				40835CBC245C8470007B942D /* UIViewLoading.swift in Sources */,
@@ -708,6 +749,8 @@
 				40835CDF245D7A21007B942D /* DomainsListViewController.swift in Sources */,
 				40835CC6245C8A72007B942D /* String + Constants.swift in Sources */,
 				40F35E5924654356002634C7 /* SelectableDialog.swift in Sources */,
+				40EB326D2466E32C00EDA669 /* ClientTableViewCell.swift in Sources */,
+				40EB32692465FF6100EDA669 /* VPNClientListConfigurator.swift in Sources */,
 				40F35E772465D496002634C7 /* ServiceTableViewCell.swift in Sources */,
 				40F35E2D2460C8A3002634C7 /* AlertViewAction.swift in Sources */,
 				40835C76245B603A007B942D /* SceneDelegate.swift in Sources */,
@@ -715,6 +758,7 @@
 				40835CAD245C7772007B942D /* ViewController.swift in Sources */,
 				40835CE3245D7A3F007B942D /* DomainsListModel.swift in Sources */,
 				40F35E4424646DA9002634C7 /* WaitingView.swift in Sources */,
+				40EB32702466FF3300EDA669 /* VPNClient.swift in Sources */,
 				40835CEC245D83FC007B942D /* PlainModelFillable.swift in Sources */,
 				40F35E362460C8AF002634C7 /* NavigationBar.swift in Sources */,
 				40F35E2B2460C8A3002634C7 /* AlertViewState.swift in Sources */,

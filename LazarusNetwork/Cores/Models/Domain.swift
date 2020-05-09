@@ -50,5 +50,4 @@ struct Domain: Decodable {
     let domainAdmin: String
     let domainEmail: String
     let domainVpnApiPort: Int
-
 }

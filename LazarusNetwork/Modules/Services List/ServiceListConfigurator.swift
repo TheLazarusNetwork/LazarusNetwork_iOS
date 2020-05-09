@@ -23,7 +23,14 @@ class ServiceListConfigurator: BaseConfigurator {
         presenter.controller = viewController
         
         presenter.onGotoVPN = { [weak viewController, domain] in
-            
+            let configurator = VPNClientListConfigurator()
+            configurator.domain = domain
+            guard let navigationController = viewController?.navigationController else {
+                return
+            }
+            DispatchQueue.main.async {
+                navigationController.pushViewController(configurator.controller, animated: true)
+            }
         }
         
         presenter.onGotoFireWall = { [weak viewController, domain] in

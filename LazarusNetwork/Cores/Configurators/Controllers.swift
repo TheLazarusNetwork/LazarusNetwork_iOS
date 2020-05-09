@@ -13,6 +13,7 @@ enum Controllers {
     case domains
     case addDomain
     case serviceList
+    case vpnClientList
 }
 
 extension Controllers: ControllerCreationable {
@@ -29,6 +30,9 @@ extension Controllers: ControllerCreationable {
             
         case .serviceList:
             return "ServiceListViewController"
+            
+        case .vpnClientList:
+            return "VPNClientListViewController"
         }
     }
     
@@ -50,7 +54,10 @@ extension Controllers {
             return AddDomainConfigurator()
             
         case .serviceList:
-            return DomainsListConfigurator()
+            return ServiceListConfigurator()
+            
+        case .vpnClientList:
+            return VPNClientListConfigurator()
         }
     }
 }

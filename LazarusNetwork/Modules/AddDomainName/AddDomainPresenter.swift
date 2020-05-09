@@ -23,7 +23,7 @@ extension Constants.Strings {
     static let planSelectionDialogTitle = "Please select plan".localized
     static let regionSelectionDialogTitle = "Please select region".localized
     
-    static let successCreatingDomainTitle = "Success".localized
+    static let successCreatingTitle = "Success".localized
     static let successCreatingDomain = "Domain %@ was created".localized
 }
 
@@ -151,7 +151,7 @@ class AddDomainPresenter: AddDomainPresentable {
                                 
                             case .emptySuccess(_), .success:
                                 let message = Constants.Strings.successCreatingDomain.replacingOccurrences(of: "%@", with: domain?.domainName ?? .empty, options: NSString.CompareOptions.literal, range: nil)
-                                self?.controller?.showSuccessMessage(message: message, title: Constants.Strings.successCreatingDomainTitle)
+                                self?.controller?.showSuccessMessage(message: message, title: Constants.Strings.successCreatingTitle)
                             }
         }
     }

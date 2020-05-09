@@ -15,8 +15,8 @@ extension Constants.Strings {
 enum Services: CaseIterable {
     case vpn
     case firewall
-    case stream
-    case chat
+//    case stream
+//    case chat
 }
 
 extension Services {
@@ -28,11 +28,11 @@ extension Services {
         case .firewall:
             return "Firewall".localized
             
-        case .stream:
-            return "Stream".localized
-            
-        case .chat:
-            return "Chat".localized
+//        case .stream:
+//            return "Stream".localized
+//
+//        case .chat:
+//            return "Chat".localized
         }
     }
 }
@@ -85,7 +85,17 @@ class ServiceListPresenter: ServiceListPresentable {
     }
     
     func item(selectedAtIndex index: Int) {
-        //        onGotoDetail?()
+        guard itemModels.indices.contains(index) else {
+            return
+        }
+        let itemModel = itemModels[index]
+        switch itemModel.serviceType {
+        case .vpn:
+            onGotoVPN?()
+            
+        case .firewall:
+            onGotoFireWall?()
+        }
     }
     
     private func generateModels() {

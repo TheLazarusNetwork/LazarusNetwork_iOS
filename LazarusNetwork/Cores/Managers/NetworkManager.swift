@@ -10,6 +10,7 @@ import Foundation
 
 extension Constants.Strings {
     static let endPointURL = "https://api.lznet.co/api/v1/"
+    static let temporaryEndPointURL = "http://sg01.lazarus.network:9080/api/v1.0/"
     static let errorFetching = "Error fetching".localized
     static let serverError = "Server side error".localized
     static let endPointError = "Url parsing error".localized
@@ -26,6 +27,8 @@ extension Constants.Strings {
 enum HTTPMethod:String {
     case POST
     case GET
+    case PATCH
+    case DELETE
 }
 
 enum ResultType {
@@ -228,6 +231,161 @@ class NetworkManager {
         }
         task.resume()
     }
+    
+    func fetchClients(for domainUUID: String, completion: @escaping (ResultType, [VPNClient]?) -> Void) {
+        guard ReachabilityManager.isConnectedToNetwork() else {
+            completion(.error(Constants.Strings.noConnection), nil)
+            return
+        }
+        let resultPart = Constants.Strings.endPointURL + "client/my-uuid/\(domainUUID)"
+        guard let url = URL(string: resultPart) else {
+            completion(.error(Constants.Strings.endPointError), nil)
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.GET.rawValue
+        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            guard let data = data,
+                let response = response as? HTTPURLResponse,
+                error == nil else {
+                    completion(.error(error?.localizedDescription ?? ""), nil)
+                    return
+            }
+            
+            guard (200 ... 299) ~= response.statusCode else {
+                completion(.error(Constants.Strings.serverError), nil)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                guard let dateFormatter = self?.dateFormatter else {
+                    completion(.error(Constants.Strings.parsingError), nil)
+                    return
+                }
+                
+                decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                let clients: [VPNClient] = try decoder.decode([VPNClient].self, from: data)
+                completion(.success, clients)
+            } catch {
+                completion(.error(error.localizedDescription), nil)
+                fatalError("Error during Parsing VPNClients - \(error)")
+            }
+        }
+        task.resume()
+    }
+    
+    func updateClient(_ client: VPNClient, completion: @escaping ((ResultType, String?) -> Void)) {
+        guard ReachabilityManager.isConnectedToNetwork() else {
+            completion(.error(Constants.Strings.noConnection), nil)
+            return
+        }
+        let resultPart = Constants.Strings.endPointURL + "client/my-uuid/\(client.id)"
+        guard let url = URL(string: resultPart) else {
+            completion(.error(Constants.Strings.endPointError), nil)
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.PATCH.rawValue
+        do {
+            let jsonData = try JSONEncoder().encode(client)
+            request.httpBody = jsonData
+            request.setValue("\(jsonData.count)", forHTTPHeaderField: "Content-Length")
+        }catch {
+            completion(.error(error.localizedDescription), nil)
+            fatalError("Error during jsonSerialization - \(error)")
+        }
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            guard let data = data,
+                let response = response as? HTTPURLResponse,
+                error == nil else {
+                    completion(.error(error?.localizedDescription ?? ""), nil)
+                    return
+            }
+            
+            guard (200 ... 299) ~= response.statusCode else {
+                let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                if let result = json as? [String: Any] {
+                    if let message = result["message"] as? String {
+                        completion(.error(message), nil)
+                        return
+                    }
+                }
+                completion(.error(Constants.Strings.serverError), nil)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                guard let dateFormatter = self?.dateFormatter else {
+                    completion(.error(Constants.Strings.parsingError), nil)
+                    return
+                }
+                
+                decoder.dateDecodingStrategy = .formatted(dateFormatter)
+//                let domainResponse: DomainCreateResponse = try decoder.decode(DomainCreateResponse.self, from: data)
+//                completion(.success, domainResponse.domain)
+            } catch {
+                completion(.error(error.localizedDescription), nil)
+                fatalError("Error during Parsing DomainTypeResponse - \(error)")
+            }
+        }
+        task.resume()
+    }
+    
+    func deleteClient(_ id: String, completion: @escaping ((ResultType, String?) -> Void)) {
+        guard ReachabilityManager.isConnectedToNetwork() else {
+            completion(.error(Constants.Strings.noConnection), nil)
+            return
+        }
+        let resultPart = Constants.Strings.endPointURL + "client/my-uuid/\(id)"
+
+        guard let url = URL(string: resultPart) else {
+            completion(.error(Constants.Strings.endPointError), nil)
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.DELETE.rawValue
+        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            guard let data = data,
+                let response = response as? HTTPURLResponse,
+                error == nil else {
+                    completion(.error(error?.localizedDescription ?? ""), nil)
+                    return
+            }
+            
+            guard (200 ... 299) ~= response.statusCode else {
+                let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                if let result = json as? [String: Any] {
+                    if let message = result["message"] as? String {
+                        completion(.error(message), nil)
+                        return
+                    }
+                }
+                completion(.error(Constants.Strings.serverError), nil)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                guard let dateFormatter = self?.dateFormatter else {
+                    completion(.error(Constants.Strings.parsingError), nil)
+                    return
+                }
+                
+                decoder.dateDecodingStrategy = .formatted(dateFormatter)
+//                let clients: [VPNClient] = try decoder.decode([VPNClient].self, from: data)
+//                completion(.success, clients)
+            } catch {
+                completion(.error(error.localizedDescription), nil)
+                fatalError("Error during Parsing VPNClients - \(error)")
+            }
+        }
+        task.resume()
+    }
+
 }
 
 extension Dictionary {
