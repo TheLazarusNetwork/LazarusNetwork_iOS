@@ -13,6 +13,7 @@ protocol DomainsListViewControllable: ViewController {
     
     func setTitle(title: String)
     func updateMainInfo(message: String)
+    func hideMainInfo()
     func hideAddDomainButton()
 }
 
@@ -79,6 +80,13 @@ extension DomainsListViewController: DomainsListViewControllable {
         DispatchQueue.main.async {
             self.messageLabel.text = message
             self.messageView.isHidden = false
+        }
+    }
+    
+    func hideMainInfo() {
+        DispatchQueue.main.async {
+            self.messageLabel.text = .empty
+            self.messageView.isHidden = true
         }
     }
     

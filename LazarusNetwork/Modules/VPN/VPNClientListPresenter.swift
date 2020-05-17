@@ -14,6 +14,8 @@ extension Constants.Strings {
     static let successUpdatingClient = "Client %@ was updated".localized
     static let successDeletingClient = "Client was deleted".localized
     static let successCreatingClient = "Client %@ was created".localized
+    static let successEmailingClient = "Client config for %@ was sent".localized
+
 }
 
 protocol VPNClientListPresentable: Presenter {
@@ -24,14 +26,14 @@ protocol VPNClientListPresentable: Presenter {
     func item(selectedAtIndex index: Int)
     func addClientSelected()
 
-//    var onGotoDetail: ((Domain) -> Void)? { get set }
+    var onGotoDetail: ((Domain, VPNClient) -> Void)? { get set }
     var onAddClient: (() -> Void)? { get set }
 }
 
 class VPNClientListPresenter: VPNClientListPresentable {
     weak var controller: VPNClientListViewControllable?
     
-//    var onGotoDetail: ((Domain) -> Void)?
+    var onGotoDetail: ((Domain, VPNClient) -> Void)?
     var onAddClient: (() -> Void)?
     
     private let model: VPNClientListModel
@@ -90,6 +92,7 @@ class VPNClientListPresenter: VPNClientListPresentable {
             return
         }
         
+        onGotoDetail?(model.domain, model.clients[index])
     }
     
     func addClientSelected() {
@@ -134,7 +137,23 @@ extension VPNClientListPresenter: ClientCellDelegate {
         
     }
     
-    func mailClient() {
+    func mailClient(_ client: VPNClient) {
+        controller?.showWaitingDialog()
+        model.mailClientConfig(client.id, completion: { [weak self] result in
+            self?.controller?.removeWaitingDialog()
+            switch result {
+            case .error(let error):
+                self?.controller?.show(alertWithMessage: error, andTitle: Constants.Strings.errorTitle)
+                
+            case .emptySuccess(_), .success:
+                let message = Constants.Strings.successEmailingClient.replacingOccurrences(of: "%@", with: client.name, options: NSString.CompareOptions.literal, range: nil)
+                self?.controller?.show(alertWithMessage: message,
+                                       andTitle: Constants.Strings.successCreatingTitle)
+            }
+        })
+    }
+    
+    func qrImagePressed() {
         
     }
 }

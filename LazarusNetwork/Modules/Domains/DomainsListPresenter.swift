@@ -57,6 +57,9 @@ class DomainsListPresenter: DomainsListPresentable {
                 self?.controller?.updateMainInfo(message: message)
                 
             case .success:
+                if (self?.model.domainsList.count ?? 0) > 0 {
+                    self?.controller?.hideMainInfo()
+                }
                 self?.controller?.reloadTable()
                 if (self?.model.domainsList.count ?? 0) > 2 {
                     self?.controller?.hideAddDomainButton()

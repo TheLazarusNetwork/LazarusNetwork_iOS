@@ -10,15 +10,17 @@ import Foundation
 
 protocol VPNClientListModellable: Model {
     var clientsList: [ClientCellPlainModel] { get }
-    
+    var clients: [VPNClient] { get }
     func loadClients(completion: @escaping ((ResultType) -> Void))
     
     func updateClient(_ client: VPNClient, completion: @escaping ((ResultType) -> Void))
     func deleteClient(_ id: String, completion: @escaping ((ResultType) -> Void))
+    func mailClientConfig(_ id: String, completion: @escaping ((ResultType) -> Void))
 }
 
 class VPNClientListModel: VPNClientListModellable {
     var clientsList: [ClientCellPlainModel] = .init()
+    var clients: [VPNClient] = .init()
     let domain: Domain
     
     init(with domain: Domain) {
@@ -36,7 +38,7 @@ class VPNClientListModel: VPNClientListModellable {
                     completion(result)
                     return
                 }
-
+                self?.clients = clientsResult
                 self?.prepareModels(clientsResult:clientsResult)
                 completion(result)
                 
@@ -48,14 +50,19 @@ class VPNClientListModel: VPNClientListModellable {
     }
     
     func updateClient(_ client: VPNClient, completion: @escaping ((ResultType) -> Void)) {
-        NetworkManager.shared.updateClient(client) { result, message in
+        NetworkManager.shared.updateClient(client) { result in
             completion(result)
         }
-        
     }
     
     func deleteClient(_ id: String, completion: @escaping ((ResultType) -> Void)) {
         NetworkManager.shared.deleteClient(id) { result, message in
+            completion(result)
+        }
+    }
+    
+    func mailClientConfig(_ id: String, completion: @escaping ((ResultType) -> Void)) {
+        NetworkManager.shared.mailClientConfig(id) { result in
             completion(result)
         }
     }

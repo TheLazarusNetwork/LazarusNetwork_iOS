@@ -15,7 +15,7 @@ extension Constants.Strings {
     static let selectRegion = "Select region".localized
     static let selectType = "Select domain type".localized
     
-    static let addNameError = "Please enter domain name".localized
+    static let addNameError = "Please enter name".localized
     static let addEmailError = "Please enter email".localized
     static let selectRegionError = "Please select region".localized
     static let selectTypeError = "Please select domain type".localized

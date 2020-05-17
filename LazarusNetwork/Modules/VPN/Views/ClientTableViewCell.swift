@@ -21,7 +21,8 @@ protocol ClientCellDelegate: class {
     func updateClient(_ client: VPNClient)
     func deleteClient(_ id: String)
     func downloadClient()
-    func mailClient()
+    func mailClient(_ client: VPNClient)
+    func qrImagePressed()
 }
 
 struct ClientCellPlainModel: PlainModel {
@@ -101,10 +102,14 @@ class ClientTableViewCell: UITableViewCell {
     }
     
     @IBAction func sendMailPressed(_ sender: UIButton) {
-
+        model.delegate?.mailClient(model.client)
     }
     
     @IBAction func downloadPressed(_ sender: UIButton) {
+
+    }
+    
+    @IBAction func qRImagePressed(_ sender: UIButton) {
 
     }
 }

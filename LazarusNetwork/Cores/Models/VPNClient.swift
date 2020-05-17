@@ -10,8 +10,8 @@ import Foundation
 
 struct VPNClient: Codable {
     let id: String
-    let name: String
-    let email: String
+    var name: String
+    var email: String
     var enable: Bool
     let ignorePersistentKeepalive: Bool
     let presharedKey: String
@@ -23,4 +23,25 @@ struct VPNClient: Codable {
     
     let address: [String]
     let allowedIPs: [String]
+    
+    var description: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = Constants.Strings.DateFormat.dateFormat
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        let result = ["id": id,
+                      "name": name,
+                      "email": email,
+                      "enable": enable,
+                      "ignorePersistentKeepalive": ignorePersistentKeepalive,
+                      "presharedKey": presharedKey,
+                      "privateKey": privateKey,
+                      "publicKey": publicKey,
+                      "created": dateFormatter.string(from: created),
+                      "updated": dateFormatter.string(from: updated),
+                      "address": address,
+                      "allowedIPs": allowedIPs
+            ] as [String : Any]
+        return result.description
+    }
 }

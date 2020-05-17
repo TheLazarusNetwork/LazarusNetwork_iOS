@@ -22,19 +22,30 @@ class VPNClientListConfigurator: BaseConfigurator {
         viewController.presenter = presenter
         presenter.controller = viewController
         
-//        presenter.onGotoDetail = { [weak viewController] in
-//           
-//        }
-//        
         presenter.onAddClient = { [weak viewController] in
-//            let configurator = AddDomainConfigurator()
-//            configurator.domain = domain
-//            guard let navigationController = viewController?.navigationController else {
-//                return
-//            }
-//            DispatchQueue.main.async {
-//                navigationController.pushViewController(configurator.controller, animated: true)
-//            }
+            let configurator = ClientDetailConfigurator()
+            configurator.mode = .create
+            configurator.domain = domain
+            guard let navigationController = viewController?.navigationController else {
+                return
+            }
+            DispatchQueue.main.async {
+                navigationController.pushViewController(configurator.controller, animated: true)
+            }
+        }
+        
+        presenter.onGotoDetail = { [weak viewController] domain, client in
+            let configurator = ClientDetailConfigurator()
+            configurator.mode = .update
+            configurator.domain = domain
+            configurator.client = client
+
+            guard let navigationController = viewController?.navigationController else {
+                return
+            }
+            DispatchQueue.main.async {
+                navigationController.pushViewController(configurator.controller, animated: true)
+            }
         }
         
         return viewController
