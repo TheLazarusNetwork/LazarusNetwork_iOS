@@ -20,9 +20,9 @@ extension Constants.Strings {
 protocol ClientCellDelegate: class {
     func updateClient(_ client: VPNClient)
     func deleteClient(_ id: String)
-    func downloadClient()
+    func downloadClient(_ client: VPNClient)
     func mailClient(_ client: VPNClient)
-    func qrImagePressed()
+    func qrImagePressed(_ client: VPNClient)
 }
 
 struct ClientCellPlainModel: PlainModel {
@@ -106,11 +106,11 @@ class ClientTableViewCell: UITableViewCell {
     }
     
     @IBAction func downloadPressed(_ sender: UIButton) {
-
+        model.delegate?.downloadClient(model.client)
     }
     
     @IBAction func qRImagePressed(_ sender: UIButton) {
-
+        model.delegate?.qrImagePressed(model.client)
     }
 }
 

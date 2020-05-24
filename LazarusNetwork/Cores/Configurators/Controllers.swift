@@ -15,6 +15,7 @@ enum Controllers {
     case serviceList
     case vpnClientList
     case addVpnClient
+    case qrPreview
 }
 
 extension Controllers: ControllerCreationable {
@@ -37,6 +38,9 @@ extension Controllers: ControllerCreationable {
             
         case .addVpnClient:
             return "ClientDetailViewController"
+            
+        case .qrPreview:
+            return "QRPreviewViewController"
         }
     }
     
@@ -65,6 +69,9 @@ extension Controllers {
             
         case .addVpnClient:
             return ClientDetailConfigurator()
+            
+        case .qrPreview:
+            return QRPreviewConfigurator()
         }
     }
 }

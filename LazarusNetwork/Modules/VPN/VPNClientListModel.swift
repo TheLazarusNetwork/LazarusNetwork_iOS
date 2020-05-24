@@ -16,6 +16,7 @@ protocol VPNClientListModellable: Model {
     func updateClient(_ client: VPNClient, completion: @escaping ((ResultType) -> Void))
     func deleteClient(_ id: String, completion: @escaping ((ResultType) -> Void))
     func mailClientConfig(_ id: String, completion: @escaping ((ResultType) -> Void))
+    func loadQRCode(_ id: String, completion: @escaping ((ResultType, String?) -> Void))
 }
 
 class VPNClientListModel: VPNClientListModellable {
@@ -50,20 +51,26 @@ class VPNClientListModel: VPNClientListModellable {
     }
     
     func updateClient(_ client: VPNClient, completion: @escaping ((ResultType) -> Void)) {
-        NetworkManager.shared.updateClient(client) { result in
+        NetworkManager.shared.updateClient(for:domain.domainUUID, client:client) { result in
             completion(result)
         }
     }
     
     func deleteClient(_ id: String, completion: @escaping ((ResultType) -> Void)) {
-        NetworkManager.shared.deleteClient(id) { result, message in
+        NetworkManager.shared.deleteClient(for:domain.domainUUID, clientId:id) { result, message in
             completion(result)
         }
     }
     
     func mailClientConfig(_ id: String, completion: @escaping ((ResultType) -> Void)) {
-        NetworkManager.shared.mailClientConfig(id) { result in
+        NetworkManager.shared.mailClientConfig(for:domain.domainUUID, clientId:id) { result in
             completion(result)
+        }
+    }
+    
+    func loadQRCode(_ id: String, completion: @escaping ((ResultType, String?) -> Void)) {
+        NetworkManager.shared.loadConfig(for:domain.domainUUID, clientId:id) { result, message in
+            completion(result, message)
         }
     }
     

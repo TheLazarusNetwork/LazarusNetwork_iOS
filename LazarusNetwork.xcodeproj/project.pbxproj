@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4011DA6A247AE548008B8440 /* QRPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011DA69247AE548008B8440 /* QRPreviewViewController.swift */; };
+		4011DA6C247AE55C008B8440 /* QRPreviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011DA6B247AE55C008B8440 /* QRPreviewPresenter.swift */; };
+		4011DA6E247AE56D008B8440 /* QRPreviewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011DA6D247AE56D008B8440 /* QRPreviewConfigurator.swift */; };
 		404E870E24714413001D56FD /* VPNClientsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404E870D24714413001D56FD /* VPNClientsResponse.swift */; };
 		404E871124715261001D56FD /* ClientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404E871024715261001D56FD /* ClientDetailViewController.swift */; };
 		404E871324715274001D56FD /* ClientDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404E871224715274001D56FD /* ClientDetailPresenter.swift */; };
@@ -102,6 +105,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4011DA69247AE548008B8440 /* QRPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPreviewViewController.swift; sourceTree = "<group>"; };
+		4011DA6B247AE55C008B8440 /* QRPreviewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPreviewPresenter.swift; sourceTree = "<group>"; };
+		4011DA6D247AE56D008B8440 /* QRPreviewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPreviewConfigurator.swift; sourceTree = "<group>"; };
 		404E870D24714413001D56FD /* VPNClientsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNClientsResponse.swift; sourceTree = "<group>"; };
 		404E871024715261001D56FD /* ClientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailViewController.swift; sourceTree = "<group>"; };
 		404E871224715274001D56FD /* ClientDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailPresenter.swift; sourceTree = "<group>"; };
@@ -209,6 +215,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4011DA68247ACC34008B8440 /* QRPreview */ = {
+			isa = PBXGroup;
+			children = (
+				4011DA69247AE548008B8440 /* QRPreviewViewController.swift */,
+				4011DA6B247AE55C008B8440 /* QRPreviewPresenter.swift */,
+				4011DA6D247AE56D008B8440 /* QRPreviewConfigurator.swift */,
+			);
+			path = QRPreview;
+			sourceTree = "<group>";
+		};
 		404E870F24714B17001D56FD /* AddClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +269,7 @@
 		40835C87245C7013007B942D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4011DA68247ACC34008B8440 /* QRPreview */,
 				404E870F24714B17001D56FD /* AddClient */,
 				40EB32612465FEE100EDA669 /* VPN */,
 				40F35E6D2465CAD9002634C7 /* Services List */,
@@ -755,6 +772,7 @@
 				40F35E5224647851002634C7 /* AddDomainConfigurator.swift in Sources */,
 				40F35E6924654D9E002634C7 /* SelectableItemTableViewCell.swift in Sources */,
 				40835CE8245D7D13007B942D /* NetworkManager.swift in Sources */,
+				4011DA6A247AE548008B8440 /* QRPreviewViewController.swift in Sources */,
 				40835CA9245C7565007B942D /* Model.swift in Sources */,
 				404E87192471914B001D56FD /* VPNClientCreationResponse.swift in Sources */,
 				40835C74245B603A007B942D /* AppDelegate.swift in Sources */,
@@ -774,6 +792,7 @@
 				40F35E4E2464781B002634C7 /* AddDomainController.swift in Sources */,
 				40835CA7245C7375007B942D /* BaseStartingConfigurator.swift in Sources */,
 				40835CEA245D7E01007B942D /* Controllers.swift in Sources */,
+				4011DA6C247AE55C008B8440 /* QRPreviewPresenter.swift in Sources */,
 				40835CCD245C8C0E007B942D /* StartUpFlowType.swift in Sources */,
 				40835CF6245D8D1A007B942D /* UITableViewCell+ReuseIdentifier.swift in Sources */,
 				40F35E6324654AF1002634C7 /* SelectableViewModel.swift in Sources */,
@@ -787,6 +806,7 @@
 				40F35E2D2460C8A3002634C7 /* AlertViewAction.swift in Sources */,
 				40835C76245B603A007B942D /* SceneDelegate.swift in Sources */,
 				40835C9D245C723F007B942D /* BaseConfigurator.swift in Sources */,
+				4011DA6E247AE56D008B8440 /* QRPreviewConfigurator.swift in Sources */,
 				40835CAD245C7772007B942D /* ViewController.swift in Sources */,
 				40835CE3245D7A3F007B942D /* DomainsListModel.swift in Sources */,
 				40F35E4424646DA9002634C7 /* WaitingView.swift in Sources */,
@@ -935,6 +955,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RD9R4LLF26;
 				INFOPLIST_FILE = LazarusNetwork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -953,6 +974,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RD9R4LLF26;
 				INFOPLIST_FILE = LazarusNetwork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -47,7 +47,7 @@ class ClientDetailModel: ClientDetailModellable {
     
     func updateClient(completion: @escaping ((ResultType) -> Void)) {
         guard let client = client else { return }
-        NetworkManager.shared.updateClient(client) { result in
+        NetworkManager.shared.updateClient(for: domain.domainUUID, client: client) { result in
             completion(result)
         }
     }

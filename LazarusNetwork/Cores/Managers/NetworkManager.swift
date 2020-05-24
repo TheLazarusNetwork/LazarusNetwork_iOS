@@ -237,7 +237,7 @@ class NetworkManager {
             completion(.error(Constants.Strings.noConnection), nil)
             return
         }
-        let resultPart = Constants.Strings.endPointURL + "vpn/client/my-unique-uuid"
+        let resultPart = Constants.Strings.endPointURL + "vpn/client/\(domainUUID)"
         guard let url = URL(string: resultPart) else {
             completion(.error(Constants.Strings.endPointError), nil)
             return
@@ -275,12 +275,12 @@ class NetworkManager {
         task.resume()
     }
     
-    func updateClient(_ client: VPNClient, completion: @escaping ((ResultType) -> Void)) {
+    func updateClient(for domainUUID: String, client: VPNClient, completion: @escaping ((ResultType) -> Void)) {
         guard ReachabilityManager.isConnectedToNetwork() else {
             completion(.error(Constants.Strings.noConnection))
             return
         }
-        let resultPart = Constants.Strings.endPointURL + "vpn/client/my-unique-uuid/\(client.id)"
+        let resultPart = Constants.Strings.endPointURL + "vpn/client/\(domainUUID)/\(client.id)"
         guard let url = URL(string: resultPart) else {
             completion(.error(Constants.Strings.endPointError))
             return
@@ -343,7 +343,7 @@ class NetworkManager {
             completion(.error(Constants.Strings.noConnection), nil)
             return
         }
-        let resultPart = Constants.Strings.endPointURL + "vpn/client/my-unique-uuid"
+        let resultPart = Constants.Strings.endPointURL + "vpn/client/\(domainUUID)"
         guard let url = URL(string: resultPart) else {
             completion(.error(Constants.Strings.endPointError), nil)
             return
@@ -402,12 +402,12 @@ class NetworkManager {
         task.resume()
     }
     
-    func deleteClient(_ id: String, completion: @escaping ((ResultType, String?) -> Void)) {
+    func deleteClient(for domainUUID: String, clientId: String, completion: @escaping ((ResultType, String?) -> Void)) {
         guard ReachabilityManager.isConnectedToNetwork() else {
             completion(.error(Constants.Strings.noConnection), nil)
             return
         }
-        let resultPart = Constants.Strings.endPointURL + "vpn/client/my-uuid/\(id)"
+        let resultPart = Constants.Strings.endPointURL + "vpn/client/\(domainUUID)/\(clientId)"
 
         guard let url = URL(string: resultPart) else {
             completion(.error(Constants.Strings.endPointError), nil)
@@ -434,30 +434,17 @@ class NetworkManager {
                 completion(.error(Constants.Strings.serverError), nil)
                 return
             }
-            
-            do {
-                let decoder = JSONDecoder()
-                guard let dateFormatter = self?.dateFormatter else {
-                    completion(.error(Constants.Strings.parsingError), nil)
-                    return
-                }
-                
-                decoder.dateDecodingStrategy = .formatted(dateFormatter)
-//                let clients: [VPNClient] = try decoder.decode([VPNClient].self, from: data)
-//                completion(.success, clients)
-            } catch {
-                completion(.error(error.localizedDescription), nil)
-                fatalError("Error during Parsing VPNClients - \(error)")
-            }
+            completion(.success, nil)
         }
         task.resume()
     }
-    func mailClientConfig(_ id: String, completion: @escaping ((ResultType) -> Void)) {
+    
+    func mailClientConfig(for domainUUID: String, clientId: String, completion: @escaping ((ResultType) -> Void)) {
         guard ReachabilityManager.isConnectedToNetwork() else {
             completion(.error(Constants.Strings.noConnection))
             return
         }
-        let resultPart = Constants.Strings.endPointURL + "vpn/client/my-uuid/\(id)/email"
+        let resultPart = Constants.Strings.endPointURL + "vpn/client/\(domainUUID)/\(clientId)/email"
         
         guard let url = URL(string: resultPart) else {
             completion(.error(Constants.Strings.endPointError))
@@ -465,7 +452,7 @@ class NetworkManager {
         }
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.GET.rawValue
-        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data,
                 let response = response as? HTTPURLResponse,
                 error == nil else {
@@ -484,21 +471,49 @@ class NetworkManager {
                 completion(.error(Constants.Strings.serverError))
                 return
             }
-            
-            do {
-                let decoder = JSONDecoder()
-                guard let dateFormatter = self?.dateFormatter else {
-                    completion(.error(Constants.Strings.parsingError))
+            completion(.success)
+        }
+        task.resume()
+    }
+    
+    func loadConfig(for domainUUID: String, clientId: String, completion: @escaping ((ResultType, String?) -> Void)) {
+        guard ReachabilityManager.isConnectedToNetwork() else {
+            completion(.error(Constants.Strings.noConnection), nil)
+            return
+        }
+        let resultPart = Constants.Strings.endPointURL + "vpn/client/\(domainUUID)/\(clientId)/config"
+        
+        guard let url = URL(string: resultPart) else {
+            completion(.error(Constants.Strings.endPointError), nil)
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.GET.rawValue
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data,
+                let response = response as? HTTPURLResponse,
+                error == nil else {
+                    completion(.error(error?.localizedDescription ?? ""), nil)
                     return
-                }
-                
-                decoder.dateDecodingStrategy = .formatted(dateFormatter)
-                //                let clients: [VPNClient] = try decoder.decode([VPNClient].self, from: data)
-                //                completion(.success, clients)
-            } catch {
-                completion(.error(error.localizedDescription))
-                fatalError("Error during Parsing VPNClients - \(error)")
             }
+            
+            guard (200 ... 299) ~= response.statusCode else {
+                let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                if let result = json as? [String: Any] {
+                    if let message = result["message"] as? String {
+                        completion(.error(message), nil)
+                        return
+                    }
+                }
+                completion(.error(Constants.Strings.serverError), nil)
+                return
+            }
+            
+            if let result = String(data: data, encoding: .utf8) {
+                completion(.success, result)
+                return
+            }
+            completion(.error("Error during Parsing VPNClient config"), nil)
         }
         task.resume()
     }

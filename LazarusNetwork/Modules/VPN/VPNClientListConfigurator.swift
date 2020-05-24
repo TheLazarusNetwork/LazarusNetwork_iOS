@@ -48,6 +48,18 @@ class VPNClientListConfigurator: BaseConfigurator {
             }
         }
         
+        presenter.onQRPreview = { [weak viewController] qrString in
+            let configurator = QRPreviewConfigurator()
+            configurator.qrString = qrString ?? .empty
+
+            DispatchQueue.main.async {
+                let controller = configurator.controller
+                controller.modalPresentationStyle = .overFullScreen
+                controller.modalTransitionStyle = .flipHorizontal
+                viewController?.present(controller, animated: true, completion: nil)
+            }
+        }
+        
         return viewController
     }
 }
