@@ -9,7 +9,7 @@
 import Foundation
 
 extension Constants.Strings {
-    static let endPointURL = "https://api.lznet.co/api/v1/"
+    static let endPointURL = "https://app.lazarus.network/api/v1/"
     static let temporaryEndPointURL = "http://sg01.lazarus.network:9080/api/v1.0/"
     static let errorFetching = "Error fetching".localized
     static let serverError = "Server side error".localized

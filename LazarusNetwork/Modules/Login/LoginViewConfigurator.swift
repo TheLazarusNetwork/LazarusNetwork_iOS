@@ -46,6 +46,17 @@ class LogInConfigurator: BaseConfiguratorContainingControllerType {
             }
         }
         
+        presenter.onRegister = { [weak createdController] in
+            createdController?.removeWaitingDialog()
+            let configurator = RegistrationConfigurator()
+            guard let navigationController = createdController?.navigationController else {
+                return
+            }
+            DispatchQueue.main.async {
+                navigationController.pushViewController(configurator.controller, animated: true)
+            }
+        }
+        
         return createdController
     }
 }

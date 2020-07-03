@@ -10,6 +10,7 @@ import UIKit
 
 enum Controllers {
     case login
+    case registration
     case domains
     case addDomain
     case serviceList
@@ -23,6 +24,9 @@ extension Controllers: ControllerCreationable {
         switch self {
         case .login:
             return "LoginViewController"
+            
+        case .registration:
+            return "RegistrationViewController"
             
         case .domains:
             return "DomainsListViewController"
@@ -54,6 +58,9 @@ extension Controllers {
         switch self {
         case .login:
             return LogInConfigurator()
+            
+        case .registration:
+            return RegistrationConfigurator()
             
         case .domains:
             return DomainsListConfigurator()

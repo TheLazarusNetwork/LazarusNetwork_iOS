@@ -16,6 +16,10 @@
 		404E871524715282001D56FD /* ClientDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404E871424715282001D56FD /* ClientDetailModel.swift */; };
 		404E871724715292001D56FD /* ClientDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404E871624715292001D56FD /* ClientDetailConfigurator.swift */; };
 		404E87192471914B001D56FD /* VPNClientCreationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404E87182471914B001D56FD /* VPNClientCreationResponse.swift */; };
+		40777AFB24AF34A7003868FE /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777AFA24AF34A7003868FE /* RegistrationPresenter.swift */; };
+		40777AFF24AF34D9003868FE /* RegistrationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777AFE24AF34D9003868FE /* RegistrationConfigurator.swift */; };
+		40777B0124AF34EF003868FE /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777B0024AF34EF003868FE /* RegistrationViewController.swift */; };
+		40777B0324AF616D003868FE /* NetworkManager + Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777B0224AF616D003868FE /* NetworkManager + Auth.swift */; };
 		40835C74245B603A007B942D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835C73245B603A007B942D /* AppDelegate.swift */; };
 		40835C76245B603A007B942D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835C75245B603A007B942D /* SceneDelegate.swift */; };
 		40835C80245B603C007B942D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40835C7E245B603C007B942D /* LaunchScreen.storyboard */; };
@@ -114,6 +118,10 @@
 		404E871424715282001D56FD /* ClientDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailModel.swift; sourceTree = "<group>"; };
 		404E871624715292001D56FD /* ClientDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailConfigurator.swift; sourceTree = "<group>"; };
 		404E87182471914B001D56FD /* VPNClientCreationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNClientCreationResponse.swift; sourceTree = "<group>"; };
+		40777AFA24AF34A7003868FE /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		40777AFE24AF34D9003868FE /* RegistrationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfigurator.swift; sourceTree = "<group>"; };
+		40777B0024AF34EF003868FE /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		40777B0224AF616D003868FE /* NetworkManager + Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager + Auth.swift"; sourceTree = "<group>"; };
 		40835C70245B603A007B942D /* LazarusNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazarusNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40835C73245B603A007B942D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40835C75245B603A007B942D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -236,6 +244,16 @@
 			path = AddClient;
 			sourceTree = "<group>";
 		};
+		40777AF924AF347F003868FE /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				40777B0024AF34EF003868FE /* RegistrationViewController.swift */,
+				40777AFA24AF34A7003868FE /* RegistrationPresenter.swift */,
+				40777AFE24AF34D9003868FE /* RegistrationConfigurator.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 		40835C67245B603A007B942D = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +287,7 @@
 		40835C87245C7013007B942D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				40777AF924AF347F003868FE /* Registration */,
 				4011DA68247ACC34008B8440 /* QRPreview */,
 				404E870F24714B17001D56FD /* AddClient */,
 				40EB32612465FEE100EDA669 /* VPN */,
@@ -439,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				40835CE7245D7D13007B942D /* NetworkManager.swift */,
+				40777B0224AF616D003868FE /* NetworkManager + Auth.swift */,
 				40835CF7245D91E3007B942D /* ReachabilityManager.swift */,
 			);
 			path = Managers;
@@ -747,6 +767,7 @@
 				40EB32672465FF4A00EDA669 /* VPNClientListModel.swift in Sources */,
 				404E871724715292001D56FD /* ClientDetailConfigurator.swift in Sources */,
 				40F35E392460C8AF002634C7 /* NavigationBarDelegate.swift in Sources */,
+				40777AFB24AF34A7003868FE /* RegistrationPresenter.swift in Sources */,
 				40835CA2245C728C007B942D /* BaseNavigationViewController.swift in Sources */,
 				40835CB2245C7B42007B942D /* Credentionals.swift in Sources */,
 				40835C8D245C7051007B942D /* LoginViewPresenter.swift in Sources */,
@@ -778,6 +799,8 @@
 				40835C74245B603A007B942D /* AppDelegate.swift in Sources */,
 				40EB32652465FF3200EDA669 /* VPNClientListPresenter.swift in Sources */,
 				40F35E3F2460CC07002634C7 /* GradientView.swift in Sources */,
+				40777B0124AF34EF003868FE /* RegistrationViewController.swift in Sources */,
+				40777AFF24AF34D9003868FE /* RegistrationConfigurator.swift in Sources */,
 				40F35E712465CB88002634C7 /* ServiceListPresenter.swift in Sources */,
 				40835C9E245C723F007B942D /* Configurable.swift in Sources */,
 				40835CE5245D7A4F007B942D /* DomainsListConfigurator.swift in Sources */,
@@ -806,6 +829,7 @@
 				40F35E2D2460C8A3002634C7 /* AlertViewAction.swift in Sources */,
 				40835C76245B603A007B942D /* SceneDelegate.swift in Sources */,
 				40835C9D245C723F007B942D /* BaseConfigurator.swift in Sources */,
+				40777B0324AF616D003868FE /* NetworkManager + Auth.swift in Sources */,
 				4011DA6E247AE56D008B8440 /* QRPreviewConfigurator.swift in Sources */,
 				40835CAD245C7772007B942D /* ViewController.swift in Sources */,
 				40835CE3245D7A3F007B942D /* DomainsListModel.swift in Sources */,
@@ -960,7 +984,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.LazarusNetwork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lazarusnetwork.services;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -979,7 +1003,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.LazarusNetwork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lazarusnetwork.services;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

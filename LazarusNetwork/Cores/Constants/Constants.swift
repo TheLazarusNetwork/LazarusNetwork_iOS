@@ -6,7 +6,7 @@
 //  Copyright © 2020 Melany Gulianovych. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Constants {
     struct Digits { }
@@ -34,4 +34,9 @@ extension Constants.Strings {
     static let mths = "mos".localized
     static let bulletPoint = "•"
     static let doesntApply = "does not apply".localized
+}
+
+extension Constants.Colors {
+    static let GreyColor = UIColor(named: "GreyColor")
+    static let DarkGreyColor = UIColor(named: "DarkGreyColor")
 }

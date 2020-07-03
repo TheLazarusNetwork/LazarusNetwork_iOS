@@ -9,9 +9,13 @@
 import Foundation
 
 protocol LoginModellable: Model {
-    
+    func register(userName: String, email: String, password: String)
 }
 
 class LoginModel: LoginModellable {
-
+    func register(userName: String, email: String, password: String) {
+        NetworkManager.shared.register(userName: userName, email: email, password: password) { result ,_ in
+            
+        }
+    }
 }
