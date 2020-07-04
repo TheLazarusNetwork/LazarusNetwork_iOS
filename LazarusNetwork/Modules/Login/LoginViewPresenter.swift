@@ -17,9 +17,18 @@ extension Constants.Strings {
 
 }
 
+extension Constants {
+    static let googleUserId = "1061082168103-7cr35dnuf77l0imak0q5vc9u21bai666.apps.googleusercontent.com"
+}
+
 enum LoginType {
     case existedUser
     case newUser
+}
+
+enum LoginProvider {
+    case google
+    case facebook
 }
 
 protocol LoginPresentable: Presenter {
@@ -29,6 +38,7 @@ protocol LoginPresentable: Presenter {
     var onRegister: Model.EmptyOptionalHandler { get set }
 
     func loginSelected(type: LoginType, credentials: Credentionals)
+    func login(token: String, provider: LoginProvider)
 }
 
 class LogInPresenter: LoginPresentable {
@@ -44,7 +54,6 @@ class LogInPresenter: LoginPresentable {
     }
     
     func viewLoaded() {
-        
     }
     
     func loginSelected(type: LoginType, credentials: Credentionals) {
@@ -80,6 +89,15 @@ class LogInPresenter: LoginPresentable {
         }
         
         onLoggedIn?(credentials.login)
+    }
+    
+    func login(token: String, provider: LoginProvider) {
+        controller?.showWaitingDialog()
+        model.loginWithSocial(token: token, provider: provider) { [weak self] in
+            self?.controller?.removeWaitingDialog()
+            self?.onLoggedIn?(.empty)
+
+        }
     }
     
     func validate(credentials: Credentionals) -> Bool {

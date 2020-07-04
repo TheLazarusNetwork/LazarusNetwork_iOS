@@ -13,6 +13,9 @@
         <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
         </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
         <array key="Montserrat-SemiBold.ttf">
             <string>Montserrat-SemiBold</string>
         </array>
@@ -117,16 +120,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72O-SI-EAx">
-                                                <rect key="frame" x="22.5" y="537" width="130" height="30"/>
+                                                <rect key="frame" x="22.5" y="588.5" width="130" height="18.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login as new user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddz-IL-i5d">
-                                                        <rect key="frame" x="0.0" y="0.0" width="114" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="114" height="18.5"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                                         <color key="textColor" name="DarkGreyColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="Ys5-Nk-GEm">
-                                                        <rect key="frame" x="120" y="8.5" width="10" height="13"/>
+                                                        <rect key="frame" x="120" y="3" width="10" height="13"/>
                                                         <color key="tintColor" name="DarkGreyColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="13" id="fuY-Wb-TCY"/>
@@ -134,7 +137,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kty-h1-f8q">
-                                                        <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="130" height="18.5"/>
                                                         <connections>
                                                             <action selector="loginAsNewUserSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qF5-WC-Scw"/>
                                                         </connections>
@@ -171,20 +174,47 @@
                                                     <constraint firstAttribute="height" constant="140" id="Xol-Vb-fnC"/>
                                                 </constraints>
                                             </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="GRN-j9-PJN">
+                                                <rect key="frame" x="22.5" y="522" width="330" height="70"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or login using" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJ8-Qr-gpI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="330" height="16.5"/>
+                                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yic-je-sww">
+                                                        <rect key="frame" x="0.0" y="19.5" width="330" height="50.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7y-sp-IZ5">
+                                                                <rect key="frame" x="0.0" y="0.0" width="155" height="50.5"/>
+                                                                <state key="normal" title="Button"/>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYu-UW-p8o" customClass="GIDSignInButton">
+                                                                <rect key="frame" x="175" y="0.0" width="155" height="50.5"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="3Ef-ZH-rMj" firstAttribute="leading" secondItem="c6x-8S-IS0" secondAttribute="leading" id="94t-48-sIs"/>
                                             <constraint firstItem="oqc-MX-kAa" firstAttribute="top" secondItem="ZSe-eF-Ri3" secondAttribute="bottom" constant="20" id="9Of-hr-ORI"/>
+                                            <constraint firstItem="GRN-j9-PJN" firstAttribute="top" secondItem="oqc-MX-kAa" secondAttribute="bottom" constant="20" id="F5X-Hq-ro3"/>
                                             <constraint firstItem="ZSe-eF-Ri3" firstAttribute="centerX" secondItem="c6x-8S-IS0" secondAttribute="centerX" id="GhO-7c-XFG"/>
                                             <constraint firstItem="ZSe-eF-Ri3" firstAttribute="top" secondItem="3Ef-ZH-rMj" secondAttribute="bottom" constant="10" id="IGB-Fq-1lV"/>
                                             <constraint firstItem="3Ef-ZH-rMj" firstAttribute="top" secondItem="c6x-8S-IS0" secondAttribute="top" constant="10" id="Tx7-Ej-nKj"/>
-                                            <constraint firstItem="72O-SI-EAx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oqc-MX-kAa" secondAttribute="bottom" constant="20" id="YQX-fY-9kW"/>
+                                            <constraint firstItem="72O-SI-EAx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GRN-j9-PJN" secondAttribute="bottom" constant="-3.5" id="YQX-fY-9kW"/>
                                             <constraint firstItem="72O-SI-EAx" firstAttribute="leading" secondItem="oqc-MX-kAa" secondAttribute="leading" id="iem-Cq-4iR"/>
                                             <constraint firstItem="3Ef-ZH-rMj" firstAttribute="centerX" secondItem="c6x-8S-IS0" secondAttribute="centerX" id="jTd-Lu-Db5"/>
-                                            <constraint firstAttribute="bottom" secondItem="72O-SI-EAx" secondAttribute="bottom" constant="100" id="jXZ-D9-dQv"/>
+                                            <constraint firstAttribute="bottom" secondItem="72O-SI-EAx" secondAttribute="bottom" constant="60" id="jXZ-D9-dQv"/>
                                             <constraint firstItem="oqc-MX-kAa" firstAttribute="centerX" secondItem="c6x-8S-IS0" secondAttribute="centerX" id="mVC-sX-pRl"/>
+                                            <constraint firstItem="GRN-j9-PJN" firstAttribute="leading" secondItem="oqc-MX-kAa" secondAttribute="leading" id="mr3-1l-aki"/>
                                             <constraint firstAttribute="trailing" secondItem="3Ef-ZH-rMj" secondAttribute="trailing" id="reW-be-wdc"/>
+                                            <constraint firstItem="GRN-j9-PJN" firstAttribute="trailing" secondItem="oqc-MX-kAa" secondAttribute="trailing" id="zlR-Yd-1Ip"/>
                                         </constraints>
                                     </view>
                                 </subviews>

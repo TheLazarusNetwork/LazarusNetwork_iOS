@@ -106,9 +106,11 @@
 		40F35E732465CBA8002634C7 /* ServiceListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E722465CBA8002634C7 /* ServiceListConfigurator.swift */; };
 		40F35E772465D496002634C7 /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F35E752465D496002634C7 /* ServiceTableViewCell.swift */; };
 		40F35E782465D496002634C7 /* ServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40F35E762465D496002634C7 /* ServiceTableViewCell.xib */; };
+		B8D8D450C6DA9D5AED84F330 /* Pods_LazarusNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15E6F8636EB88F066001970 /* Pods_LazarusNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3EE91C46AF93ECE4459D3D56 /* Pods-LazarusNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazarusNetwork.debug.xcconfig"; path = "Target Support Files/Pods-LazarusNetwork/Pods-LazarusNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 		4011DA69247AE548008B8440 /* QRPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPreviewViewController.swift; sourceTree = "<group>"; };
 		4011DA6B247AE55C008B8440 /* QRPreviewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPreviewPresenter.swift; sourceTree = "<group>"; };
 		4011DA6D247AE56D008B8440 /* QRPreviewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPreviewConfigurator.swift; sourceTree = "<group>"; };
@@ -210,6 +212,8 @@
 		40F35E722465CBA8002634C7 /* ServiceListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListConfigurator.swift; sourceTree = "<group>"; };
 		40F35E752465D496002634C7 /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
 		40F35E762465D496002634C7 /* ServiceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceTableViewCell.xib; sourceTree = "<group>"; };
+		4D58F17A33285D17D1041C2C /* Pods-LazarusNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazarusNetwork.release.xcconfig"; path = "Target Support Files/Pods-LazarusNetwork/Pods-LazarusNetwork.release.xcconfig"; sourceTree = "<group>"; };
+		F15E6F8636EB88F066001970 /* Pods_LazarusNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazarusNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,12 +221,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8D8D450C6DA9D5AED84F330 /* Pods_LazarusNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		160A7026FF731F9EA81F229F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EE91C46AF93ECE4459D3D56 /* Pods-LazarusNetwork.debug.xcconfig */,
+				4D58F17A33285D17D1041C2C /* Pods-LazarusNetwork.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4011DA68247ACC34008B8440 /* QRPreview */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +273,8 @@
 			children = (
 				40835C72245B603A007B942D /* LazarusNetwork */,
 				40835C71245B603A007B942D /* Products */,
+				160A7026FF731F9EA81F229F /* Pods */,
+				FF7EDC7DE2B86C79A6520E1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -674,6 +690,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FF7EDC7DE2B86C79A6520E1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F15E6F8636EB88F066001970 /* Pods_LazarusNetwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -681,9 +705,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40835C84245B603C007B942D /* Build configuration list for PBXNativeTarget "LazarusNetwork" */;
 			buildPhases = (
+				053486286C06F44345F0D079 /* [CP] Check Pods Manifest.lock */,
 				40835C6C245B603A007B942D /* Sources */,
 				40835C6D245B603A007B942D /* Frameworks */,
 				40835C6E245B603A007B942D /* Resources */,
+				428C3681BC99E77F1985EB55 /* [CP] Embed Pods Frameworks */,
+				8E42093211FE4195BECB8887 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -754,6 +781,79 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		053486286C06F44345F0D079 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LazarusNetwork-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		428C3681BC99E77F1985EB55 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LazarusNetwork/Pods-LazarusNetwork-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LazarusNetwork/Pods-LazarusNetwork-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E42093211FE4195BECB8887 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LazarusNetwork/Pods-LazarusNetwork-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LazarusNetwork/Pods-LazarusNetwork-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		40835C6C245B603A007B942D /* Sources */ = {
@@ -974,6 +1074,7 @@
 		};
 		40835C85245B603C007B942D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EE91C46AF93ECE4459D3D56 /* Pods-LazarusNetwork.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -993,6 +1094,7 @@
 		};
 		40835C86245B603C007B942D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D58F17A33285D17D1041C2C /* Pods-LazarusNetwork.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
