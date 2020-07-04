@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DCDCE4E4C9FB7B64DE755F8016C953DB"
+               BlueprintIdentifier = "B94237546F8BB02B2E95FFB32525459E"
                BuildableName = "Pods_LazarusNetwork.framework"
                BlueprintName = "Pods-LazarusNetwork"
                ReferencedContainer = "container:Pods.xcodeproj">

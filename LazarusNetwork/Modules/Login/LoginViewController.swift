@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleSignIn
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 protocol LoginViewControllable: ViewController {
     
@@ -16,6 +18,8 @@ protocol LoginViewControllable: ViewController {
 class LoginViewController: BaseViewController {
     @IBOutlet weak var containerScrollView: UIScrollView!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var facebookButton: UIView!
+    @IBOutlet weak var googleButton: GIDSignInButton!
     
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -52,7 +56,13 @@ class LoginViewController: BaseViewController {
     }
     
     private func configureUiComponents() {
-        
+        let defaultSpace = 4
+        let loginButton = FBLoginButton(frame: CGRect(x: defaultSpace, y: defaultSpace, width: facebookButton.bounds.width - defaultSpace * 2, height: facebookButton.bounds.height - defaultSpace * 2))
+        loginButton.permissions = ["public_profile", "email"]
+        facebookButton.addSubview(loginButton)
+        loginButton.delegate = self
+
+        googleButton.style = .wide
     }
 }
 
@@ -83,3 +93,23 @@ extension LoginViewController: GIDSignInDelegate {
     }
 }
 
+extension LoginViewController: LoginButtonDelegate {
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        if let error = error {
+            print(error.localizedDescription)
+            removeWaitingDialog()
+            show(alertWithMessage: error.localizedDescription)
+        } else if let result = result, result.isCancelled {
+            
+        } else {
+            if let result = result, let authToken = result.token?.tokenString {
+                currentPresenter.login(token: authToken, provider: .facebook)
+            }
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        
+    }
+    
+}

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 extension Constants.Strings {
     static let emptyUserName = "User name field cant be empty".localized

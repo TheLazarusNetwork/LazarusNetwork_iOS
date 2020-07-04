@@ -6,5 +6,7 @@ target 'LazarusNetwork' do
   use_frameworks!
 
 	pod 'GoogleSignIn'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
 
 end
