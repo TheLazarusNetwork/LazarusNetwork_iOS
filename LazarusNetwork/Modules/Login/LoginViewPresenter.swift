@@ -16,6 +16,7 @@ extension Constants.Strings {
     static let emptyPassword = "Password field cant be empty".localized
     static let invalidEmail = "Inserted email is invalid".localized
     static let loginFailed = "User name or password fields are incorrect".localized
+    static let smthWrong = "Something went wrong, please try ones again".localized
 
 }
 
@@ -28,7 +29,7 @@ enum LoginType {
     case newUser
 }
 
-enum LoginProvider {
+enum LoginProvider: String {
     case google
     case facebook
 }
@@ -36,7 +37,7 @@ enum LoginProvider {
 protocol LoginPresentable: Presenter {
     var controller: LoginViewControllable? { get set }
     
-    var onLoggedIn: Model.StringOptionalHandler { get set }
+    var onLoggedIn: Model.TwoStringsOptionalHandler { get set }
     var onRegister: Model.EmptyOptionalHandler { get set }
 
     func loginSelected(type: LoginType, credentials: Credentionals)
@@ -46,7 +47,7 @@ protocol LoginPresentable: Presenter {
 class LogInPresenter: LoginPresentable {
     weak var controller: LoginViewControllable?
     
-    var onLoggedIn: Model.StringOptionalHandler = nil
+    var onLoggedIn: Model.TwoStringsOptionalHandler = nil
     var onRegister: Model.EmptyOptionalHandler = nil
 
     private let model: LoginModellable
@@ -83,22 +84,55 @@ class LogInPresenter: LoginPresentable {
             return
         }
         
-        guard validate(credentials: credentials) else {
-            controller?.removeWaitingDialog()
-            controller?.show(alertWithMessage: Constants.Strings.emptyPassword,
-                             andTitle: Constants.Strings.errorTitle)
-            return
+        guard model.validateEmail(email: credentials.login) else {
+           controller?.removeWaitingDialog()
+           controller?.show(alertWithMessage: Constants.Strings.invalidEmail,
+                            andTitle: Constants.Strings.errorTitle)
+           return
         }
         
-        onLoggedIn?(credentials.login)
+        login(credentials: credentials)
+    }
+    
+    func login(credentials: Credentionals) {
+        controller?.showWaitingDialog()
+        model.login(email: credentials.login, password: credentials.password) { [weak self] user, result in
+            switch result {
+            case .error(let error):
+                self?.controller?.removeWaitingDialog()
+                self?.controller?.show(alertWithMessage: error)
+                break
+                
+            case .success, .emptySuccess, .none:
+                self?.controller?.removeWaitingDialog()
+                guard let authToken = user?.authToken else {
+                    self?.controller?.show(alertWithMessage: "Token is empty")
+                    return
+                }
+                
+                self?.onLoggedIn?(credentials.login, authToken)
+            }
+        }
     }
     
     func login(token: String, provider: LoginProvider) {
         controller?.showWaitingDialog()
-        model.loginWithSocial(token: token, provider: provider) { [weak self] in
-            self?.controller?.removeWaitingDialog()
-            self?.onLoggedIn?(.empty)
-
+        model.loginWithSocial(token: token, provider: provider) { [weak self] user, result in
+            switch result {
+            case .error(let error):
+                self?.controller?.removeWaitingDialog()
+                self?.controller?.show(alertWithMessage: error)
+                break
+                
+            case .success, .emptySuccess, .none:
+                self?.controller?.removeWaitingDialog()
+                guard let authToken = user?.authToken, let email = user?.user?.email else {
+                    self?.controller?.show(alertWithMessage: "Token is empty")
+                    return
+                }
+                
+                self?.onLoggedIn?(email, authToken)
+            }
         }
     }
     

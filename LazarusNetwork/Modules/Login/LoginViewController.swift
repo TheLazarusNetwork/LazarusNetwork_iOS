@@ -57,7 +57,7 @@ class LoginViewController: BaseViewController {
     
     private func configureUiComponents() {
         let defaultSpace = 4
-        let loginButton = FBLoginButton(frame: CGRect(x: defaultSpace, y: defaultSpace, width: facebookButton.bounds.width - defaultSpace * 2, height: facebookButton.bounds.height - defaultSpace * 2))
+        let loginButton = FBLoginButton(frame: CGRect(x: defaultSpace, y: defaultSpace, width: Int(facebookButton.bounds.width) - defaultSpace * 2, height: Int(facebookButton.bounds.height) - defaultSpace * 2))
         loginButton.permissions = ["public_profile", "email"]
         facebookButton.addSubview(loginButton)
         loginButton.delegate = self

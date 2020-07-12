@@ -11,4 +11,5 @@ import Foundation
 protocol Model {
     typealias EmptyOptionalHandler = (() -> Void)?
     typealias StringOptionalHandler = ((String) -> Void)?
+    typealias TwoStringsOptionalHandler = ((String, String) -> Void)?
 }

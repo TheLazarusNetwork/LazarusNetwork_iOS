@@ -8,35 +8,6 @@
 
 import Foundation
 
-extension Constants.Strings {
-    static let endPointURL = "https://app.lazarus.network/api/v1/"
-    static let temporaryEndPointURL = "http://sg01.lazarus.network:9080/api/v1.0/"
-    static let errorFetching = "Error fetching".localized
-    static let serverError = "Server side error".localized
-    static let endPointError = "Url parsing error".localized
-    static let parsingError = "Parsing error".localized
-}
-
-extension Constants.Strings {
-    struct DateFormat {
-        static let dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-    }
-}
-
-
-enum HTTPMethod:String {
-    case POST
-    case GET
-    case PATCH
-    case DELETE
-}
-
-enum ResultType {
-    case success
-    case emptySuccess(String)
-    case error(String)
-}
-
 class NetworkManager {
     static let shared = NetworkManager()
     

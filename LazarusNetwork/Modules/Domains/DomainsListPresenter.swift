@@ -48,24 +48,33 @@ class DomainsListPresenter: DomainsListPresentable {
     
     func viewWillAppear() {
         controller?.showWaitingDialog()
-        model.loadDomains { [weak self] result in
+        model.loadDomains { [weak self] domainResponce, result in
             self?.controller?.removeWaitingDialog()
+            guard let strongSelf = self else {
+                return
+            }
             switch result {
             case .error(let error):
-                self?.controller?.show(alertWithMessage: error,
+                strongSelf.controller?.show(alertWithMessage: error,
                                        andTitle: Constants.Strings.errorTitle)
                 
             case .emptySuccess(let message):
-                self?.controller?.updateMainInfo(message: message)
+                strongSelf.controller?.updateMainInfo(message: message)
                 
             case .success:
-                if (self?.model.domainsList.count ?? 0) > 0 {
-                    self?.controller?.hideMainInfo()
+                if (strongSelf.model.domainsList.isEmpty) {
+                    strongSelf.controller?.updateMainInfo(message: domainResponce?.message ?? .empty)
+                    return
                 }
-                self?.controller?.reloadTable()
-                if (self?.model.domainsList.count ?? 0) > 2 {
-                    self?.controller?.hideAddDomainButton()
+                if (strongSelf.model.domainsList.count) > 0 {
+                    strongSelf.controller?.hideMainInfo()
                 }
+                strongSelf.controller?.reloadTable()
+                if (strongSelf.model.domainsList.count) > 2 {
+                    strongSelf.controller?.hideAddDomainButton()
+                }
+            case .none:
+                break
             }
         }
     }

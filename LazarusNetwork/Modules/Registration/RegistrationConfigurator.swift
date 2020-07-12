@@ -17,19 +17,16 @@ class RegistrationConfigurator: BaseConfigurator {
             return UIViewController()
         }
         
-        let presenter = RegistrationPresenter(with: LoginModel())
+        let presenter = RegistrationPresenter(with: LoginModel(manager: AuthorizationFacade()))
         viewController.presenter = presenter
         presenter.controller = viewController
         
-        presenter.onRegistered = { [weak viewController] domain in
-            viewController?.removeWaitingDialog()
-            let configurator = DomainsListConfigurator()
-//            configurator.email = email
-            guard let navigationController = viewController?.navigationController else {
-                return
-            }
+        presenter.onRegistered = { [weak viewController] in
             DispatchQueue.main.async {
-                navigationController.pushViewController(configurator.controller, animated: true)
+                guard let navigationController = viewController?.navigationController else {
+                    return
+                }
+                navigationController.popViewController(animated: true)
             }
         }
         

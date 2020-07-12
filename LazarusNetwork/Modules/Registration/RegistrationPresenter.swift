@@ -11,16 +11,16 @@ import UIKit
 protocol RegistrationPresentable: Presenter {
     var controller: RegistrationViewControllable? { get set }
     
-    var onRegistered: Model.StringOptionalHandler { get set }
+    var onRegistered: Model.EmptyOptionalHandler { get set }
     
+    func closeScreen()
     func registerSelected(userName: String, email: String, password: String)
 }
 
 class RegistrationPresenter: RegistrationPresentable {
     weak var controller: RegistrationViewControllable?
     
-    var onRegistered: Model.StringOptionalHandler = nil
-    
+    var onRegistered: Model.EmptyOptionalHandler = nil
     private let model: LoginModellable
     
     init(with model: LoginModellable) {
@@ -53,19 +53,31 @@ class RegistrationPresenter: RegistrationPresentable {
             return
         }
        
-        guard validateEmail(email: email) else {
+        guard model.validateEmail(email: email) else {
            controller?.removeWaitingDialog()
            controller?.show(alertWithMessage: Constants.Strings.invalidEmail,
                             andTitle: Constants.Strings.errorTitle)
            return
-       }
-        model.register(userName: userName, email: email, password: password)
+        }
+        model.register(userName: userName, email: email, password: password) { [weak self] user, result in
+            switch result {
+            case .error(let error):
+                self?.controller?.removeWaitingDialog()
+                self?.controller?.show(alertWithMessage: error)
+                break
+                
+            case .success, .emptySuccess, .none:
+                self?.controller?.removeWaitingDialog()
+                guard let message = user?.message else {
+                    self?.controller?.show(alertWithMessage: Constants.Strings.smthWrong)
+                    return
+                }
+                self?.controller?.showSuccessMessage(message: message, title: Constants.Strings.successCreatingTitle)
+            }
+        }
     }
     
-    func validateEmail(email: String) -> Bool {
-           let emailRegEx = "(?:[a-zA-Z0-9!#$%\\&‘*+/=?\\^_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%\\&'*+/=?\\^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
-        
-        let emailTest = NSPredicate(format:"SELF MATCHES[c] %@", emailRegEx)
-        return emailTest.evaluate(with: email)
+    func closeScreen() {
+        onRegistered?()
     }
 }

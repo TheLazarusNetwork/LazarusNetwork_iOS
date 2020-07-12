@@ -18,6 +18,7 @@ extension Constants.Strings {
 
 protocol RegistrationViewControllable: ViewController {
     func populateFields()
+    func showSuccessMessage(message: String, title: String)
 }
 
 class RegistrationViewController: BaseViewController {
@@ -78,6 +79,27 @@ class RegistrationViewController: BaseViewController {
         }
         registerButton.backgroundColor = registerButton.backgroundColor?.withAlphaComponent(!userBool && !emailBool && !passwordBool ? 1 : 0.5)
         registerButton.isEnabled = !userBool && !emailBool && !passwordBool
+    }
+    
+    
+    func showSuccessMessage(message: String, title: String) {
+        DispatchQueue.main.async { [weak currentPresenter] in
+            let alert = AlertView(
+                withTitle: title,
+                andContent: message
+            )
+            
+            alert.add(
+                AlertViewAction(
+                    buttonName: Constants.Strings.ok,
+                    with: { [weak currentPresenter] in
+                        currentPresenter?.closeScreen()
+                    }
+                )
+            )
+            
+            alert.present(on: self)
+        }
     }
     
     @IBAction func registerButtonPressed(_ sender: Any) {

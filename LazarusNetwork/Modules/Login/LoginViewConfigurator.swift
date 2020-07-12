@@ -28,20 +28,21 @@ class LogInConfigurator: BaseConfiguratorContainingControllerType {
             return UIViewController()
         }
         
-        let model = LoginModel()
+        let model = LoginModel(manager: AuthorizationFacade())
         let presenter = LogInPresenter(with: model)
         
         presenter.controller = createdController
         createdController.presenter = presenter
         
-        presenter.onLoggedIn = { [weak createdController] email in
+        presenter.onLoggedIn = { [weak createdController] email, token in
             createdController?.removeWaitingDialog()
             let configurator = DomainsListConfigurator()
             configurator.email = email
-            guard let navigationController = createdController?.navigationController else {
-                return
-            }
+            configurator.token = token
             DispatchQueue.main.async {
+                guard let navigationController = createdController?.navigationController else {
+                    return
+                }
                 navigationController.pushViewController(configurator.controller, animated: true)
             }
         }

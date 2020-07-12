@@ -19,7 +19,16 @@
 		40777AFB24AF34A7003868FE /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777AFA24AF34A7003868FE /* RegistrationPresenter.swift */; };
 		40777AFF24AF34D9003868FE /* RegistrationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777AFE24AF34D9003868FE /* RegistrationConfigurator.swift */; };
 		40777B0124AF34EF003868FE /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777B0024AF34EF003868FE /* RegistrationViewController.swift */; };
-		40777B0324AF616D003868FE /* NetworkManager + Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777B0224AF616D003868FE /* NetworkManager + Auth.swift */; };
+		40777B0A24BB3EB7003868FE /* PRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777B0924BB3EB7003868FE /* PRequest.swift */; };
+		40777B0C24BB655F003868FE /* AuthorizationFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777B0B24BB655F003868FE /* AuthorizationFacade.swift */; };
+		40777B0E24BB65BE003868FE /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777B0D24BB65BE003868FE /* RequestManager.swift */; };
+		40777B1024BB7265003868FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777B0F24BB7265003868FE /* User.swift */; };
+		40777B1224BB7EBD003868FE /* UserDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777B1124BB7EBD003868FE /* UserDetailed.swift */; };
+		40777B1824BB93E9003868FE /* UserSocialLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777B1624BB93E9003868FE /* UserSocialLoginRequest.swift */; };
+		40777B1924BB93E9003868FE /* UseRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777B1724BB93E9003868FE /* UseRegisterRequest.swift */; };
+		40777B1B24BB9442003868FE /* UserLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777B1A24BB9442003868FE /* UserLoginRequest.swift */; };
+		40777B1F24BB9A9F003868FE /* FetchDomainsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777B1E24BB9A9F003868FE /* FetchDomainsRequest.swift */; };
+		40777B2124BB9DB7003868FE /* DomainFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40777B2024BB9DB7003868FE /* DomainFacade.swift */; };
 		40835C74245B603A007B942D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835C73245B603A007B942D /* AppDelegate.swift */; };
 		40835C76245B603A007B942D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40835C75245B603A007B942D /* SceneDelegate.swift */; };
 		40835C80245B603C007B942D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40835C7E245B603C007B942D /* LaunchScreen.storyboard */; };
@@ -123,7 +132,16 @@
 		40777AFA24AF34A7003868FE /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		40777AFE24AF34D9003868FE /* RegistrationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfigurator.swift; sourceTree = "<group>"; };
 		40777B0024AF34EF003868FE /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		40777B0224AF616D003868FE /* NetworkManager + Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager + Auth.swift"; sourceTree = "<group>"; };
+		40777B0924BB3EB7003868FE /* PRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRequest.swift; sourceTree = "<group>"; };
+		40777B0B24BB655F003868FE /* AuthorizationFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationFacade.swift; sourceTree = "<group>"; };
+		40777B0D24BB65BE003868FE /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		40777B0F24BB7265003868FE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		40777B1124BB7EBD003868FE /* UserDetailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailed.swift; sourceTree = "<group>"; };
+		40777B1624BB93E9003868FE /* UserSocialLoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSocialLoginRequest.swift; sourceTree = "<group>"; };
+		40777B1724BB93E9003868FE /* UseRegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseRegisterRequest.swift; sourceTree = "<group>"; };
+		40777B1A24BB9442003868FE /* UserLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginRequest.swift; sourceTree = "<group>"; };
+		40777B1E24BB9A9F003868FE /* FetchDomainsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDomainsRequest.swift; sourceTree = "<group>"; };
+		40777B2024BB9DB7003868FE /* DomainFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainFacade.swift; sourceTree = "<group>"; };
 		40835C70245B603A007B942D /* LazarusNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazarusNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40835C73245B603A007B942D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40835C75245B603A007B942D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -266,6 +284,57 @@
 				40777AFE24AF34D9003868FE /* RegistrationConfigurator.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		40777B0424BB3DD5003868FE /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				40777B1524BB93E9003868FE /* Requests */,
+				40777B0B24BB655F003868FE /* AuthorizationFacade.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		40777B0524BB3DD6003868FE /* VPN */ = {
+			isa = PBXGroup;
+			children = (
+				40777B1D24BB9A7D003868FE /* Requests */,
+			);
+			path = VPN;
+			sourceTree = "<group>";
+		};
+		40777B0624BB3DD6003868FE /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				40777B1C24BB9A74003868FE /* Requests */,
+				40777B2024BB9DB7003868FE /* DomainFacade.swift */,
+			);
+			path = Domains;
+			sourceTree = "<group>";
+		};
+		40777B1524BB93E9003868FE /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				40777B1624BB93E9003868FE /* UserSocialLoginRequest.swift */,
+				40777B1724BB93E9003868FE /* UseRegisterRequest.swift */,
+				40777B1A24BB9442003868FE /* UserLoginRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		40777B1C24BB9A74003868FE /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				40777B1E24BB9A9F003868FE /* FetchDomainsRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		40777B1D24BB9A7D003868FE /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		40835C67245B603A007B942D = {
@@ -473,9 +542,13 @@
 		40835CE6245D7D04007B942D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				40777B0424BB3DD5003868FE /* Authorization */,
+				40777B0624BB3DD6003868FE /* Domains */,
+				40777B0524BB3DD6003868FE /* VPN */,
 				40835CE7245D7D13007B942D /* NetworkManager.swift */,
-				40777B0224AF616D003868FE /* NetworkManager + Auth.swift */,
 				40835CF7245D91E3007B942D /* ReachabilityManager.swift */,
+				40777B0924BB3EB7003868FE /* PRequest.swift */,
+				40777B0D24BB65BE003868FE /* RequestManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -507,6 +580,8 @@
 				40EB326F2466FF3300EDA669 /* VPNClient.swift */,
 				404E870D24714413001D56FD /* VPNClientsResponse.swift */,
 				404E87182471914B001D56FD /* VPNClientCreationResponse.swift */,
+				40777B0F24BB7265003868FE /* User.swift */,
+				40777B1124BB7EBD003868FE /* UserDetailed.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -864,9 +939,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40777B0E24BB65BE003868FE /* RequestManager.swift in Sources */,
 				40835CE1245D7A32007B942D /* DomainsListPresenter.swift in Sources */,
 				40835CC9245C8AE5007B942D /* Constants.swift in Sources */,
 				404E871124715261001D56FD /* ClientDetailViewController.swift in Sources */,
+				40777B1224BB7EBD003868FE /* UserDetailed.swift in Sources */,
 				40F35E372460C8AF002634C7 /* NavigationBarBackState.swift in Sources */,
 				40EB32672465FF4A00EDA669 /* VPNClientListModel.swift in Sources */,
 				404E871724715292001D56FD /* ClientDetailConfigurator.swift in Sources */,
@@ -883,7 +960,9 @@
 				40835CB7245C81B5007B942D /* Int + Constants.swift in Sources */,
 				40F35E3D2460CAD4002634C7 /* UIView+Constraints.swift in Sources */,
 				40F35E5424647914002634C7 /* AddDomainModel.swift in Sources */,
+				40777B1F24BB9A9F003868FE /* FetchDomainsRequest.swift in Sources */,
 				404E871324715274001D56FD /* ClientDetailPresenter.swift in Sources */,
+				40777B2124BB9DB7003868FE /* DomainFacade.swift in Sources */,
 				40835C91245C7072007B942D /* LoginViewConfigurator.swift in Sources */,
 				40835CAF245C7808007B942D /* ProgressContainig.swift in Sources */,
 				40835CFB245D938A007B942D /* Domain.swift in Sources */,
@@ -891,6 +970,7 @@
 				40F35E732465CBA8002634C7 /* ServiceListConfigurator.swift in Sources */,
 				40835C8B245C7037007B942D /* LoginViewController.swift in Sources */,
 				40835CFD245F0D41007B942D /* DomainResponse.swift in Sources */,
+				40777B1824BB93E9003868FE /* UserSocialLoginRequest.swift in Sources */,
 				40835C8F245C7062007B942D /* LoginViewModel.swift in Sources */,
 				40835CA5245C731A007B942D /* ControllerCreationFabric.swift in Sources */,
 				40F35E562464AF97002634C7 /* DomainTypeResponse.swift in Sources */,
@@ -901,12 +981,16 @@
 				40835CA9245C7565007B942D /* Model.swift in Sources */,
 				404E87192471914B001D56FD /* VPNClientCreationResponse.swift in Sources */,
 				40835C74245B603A007B942D /* AppDelegate.swift in Sources */,
+				40777B0C24BB655F003868FE /* AuthorizationFacade.swift in Sources */,
 				40EB32652465FF3200EDA669 /* VPNClientListPresenter.swift in Sources */,
 				40F35E3F2460CC07002634C7 /* GradientView.swift in Sources */,
+				40777B1B24BB9442003868FE /* UserLoginRequest.swift in Sources */,
 				40777B0124AF34EF003868FE /* RegistrationViewController.swift in Sources */,
+				40777B1024BB7265003868FE /* User.swift in Sources */,
 				40777AFF24AF34D9003868FE /* RegistrationConfigurator.swift in Sources */,
 				40F35E712465CB88002634C7 /* ServiceListPresenter.swift in Sources */,
 				40835C9E245C723F007B942D /* Configurable.swift in Sources */,
+				40777B0A24BB3EB7003868FE /* PRequest.swift in Sources */,
 				40835CE5245D7A4F007B942D /* DomainsListConfigurator.swift in Sources */,
 				40F35E6C24659EEF002634C7 /* DomainCreateResponse.swift in Sources */,
 				40835CF8245D91E3007B942D /* ReachabilityManager.swift in Sources */,
@@ -933,9 +1017,9 @@
 				40F35E2D2460C8A3002634C7 /* AlertViewAction.swift in Sources */,
 				40835C76245B603A007B942D /* SceneDelegate.swift in Sources */,
 				40835C9D245C723F007B942D /* BaseConfigurator.swift in Sources */,
-				40777B0324AF616D003868FE /* NetworkManager + Auth.swift in Sources */,
 				4011DA6E247AE56D008B8440 /* QRPreviewConfigurator.swift in Sources */,
 				40835CAD245C7772007B942D /* ViewController.swift in Sources */,
+				40777B1924BB93E9003868FE /* UseRegisterRequest.swift in Sources */,
 				40835CE3245D7A3F007B942D /* DomainsListModel.swift in Sources */,
 				40F35E4424646DA9002634C7 /* WaitingView.swift in Sources */,
 				40EB32702466FF3300EDA669 /* VPNClient.swift in Sources */,

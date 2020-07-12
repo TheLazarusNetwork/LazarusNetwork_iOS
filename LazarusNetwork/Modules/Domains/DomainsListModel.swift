@@ -11,44 +11,29 @@ import Foundation
 protocol DomainsListModellable: Model {
     var domainsList: [DomainCellPlainModel] { get }
     
-    func loadDomains(completion: @escaping ((ResultType) -> Void))
+    func loadDomains(handler: @escaping DataRequestHandler<DomainResponse>)
 }
 
 class DomainsListModel: DomainsListModellable {
     var domainsList: [DomainCellPlainModel] = .init()
     let email: String
+    let token: String
+
+    let manager: DomainFacadeProtocol
     
-    init(with email: String) {
+    init(manager: DomainFacadeProtocol, email: String, token: String) {
         self.email = email
+        self.token = token
+        self.manager = manager
     }
     
-    func loadDomains(completion: @escaping ((ResultType) -> Void)) {
-        NetworkManager.shared.loadAllDomains(email: email) { [weak self] result, domainsResult in
-            switch result {
-            case .error(_):
-                completion(result)
-            case .success:
-                guard let domainsResult = domainsResult else {
-                    completion(result)
-                    return
-                }
-                guard let _ = domainsResult.total else {
-                    completion(.emptySuccess(domainsResult.message))
-                    return
-                }
-                
-                guard let domains = domainsResult.domain else {
-                    completion(.emptySuccess(domainsResult.message))
-                    return
-                }
-                
-                self?.prepareModels(domains:domains)
-                completion(result)
-                
-            default:
-                completion(result)
-            }
-            
+    func loadDomains(handler: @escaping DataRequestHandler<DomainResponse>) {
+        guard let domainsRequest = FetchDomainsRequest(token: token, email: email).createRequest() else {
+            handler(nil, .error(Constants.Strings.endPointError))
+            return
+        }
+        manager.send(request: domainsRequest) { domainResponse, result in
+            handler(domainResponse, result)
         }
     }
     

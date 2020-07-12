@@ -9,8 +9,9 @@
 import UIKit
 
 class DomainsListConfigurator: BaseConfigurator {
-    var email: String = ""
-    
+    var token: String = .empty
+    var email: String = .empty
+
     override func generateController() -> UIViewController {
         let controllerType: Controllers = .domains
 
@@ -18,7 +19,7 @@ class DomainsListConfigurator: BaseConfigurator {
             return UIViewController()
         }
         
-        let presenter = DomainsListPresenter(with: DomainsListModel(with: email))
+        let presenter = DomainsListPresenter(with: DomainsListModel(manager: DomainFacade(), email: email, token: token))
         viewController.presenter = presenter
         presenter.controller = viewController
         
@@ -33,9 +34,9 @@ class DomainsListConfigurator: BaseConfigurator {
             }
         }
         
-        presenter.onAddDomain = { [weak viewController, email] in
+        presenter.onAddDomain = { [weak viewController, token] in
             let configurator = AddDomainConfigurator()
-            configurator.email = email
+            configurator.email = token
             guard let navigationController = viewController?.navigationController else {
                 return
             }
